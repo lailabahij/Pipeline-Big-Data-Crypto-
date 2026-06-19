@@ -4219,3 +4219,38 @@
 [2026-06-19T16:25:11.616+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:25:11.616+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2026-06-19T16:25:11.632+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:25:11.631+0000] {dag.py:4180} INFO - Setting next_dagrun for crypto_pipeline_dag to 2026-06-19 00:00:00+00:00, run_after=2026-06-20 00:00:00+00:00
 [2026-06-19T16:25:11.746+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crypto_pipeline_dag.py took 0.169 seconds
+[2026-06-19T16:25:42.979+0000] {processor.py:186} INFO - Started process (PID=3617) to work on /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:25:42.980+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crypto_pipeline_dag.py for tasks to queue
+[2026-06-19T16:25:42.982+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:25:42.982+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:25:42.994+0000] {processor.py:925} INFO - DAG(s) 'crypto_pipeline_dag' retrieved from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:25:43.014+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:25:43.014+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-06-19T16:25:43.138+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:25:43.138+0000] {dag.py:4180} INFO - Setting next_dagrun for crypto_pipeline_dag to 2026-06-19 00:00:00+00:00, run_after=2026-06-20 00:00:00+00:00
+[2026-06-19T16:25:43.150+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crypto_pipeline_dag.py took 0.175 seconds
+[2026-06-19T16:26:13.404+0000] {processor.py:186} INFO - Started process (PID=3622) to work on /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:26:13.405+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crypto_pipeline_dag.py for tasks to queue
+[2026-06-19T16:26:13.407+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:26:13.407+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:26:13.421+0000] {processor.py:925} INFO - DAG(s) 'crypto_pipeline_dag' retrieved from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:26:13.443+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:26:13.442+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-06-19T16:26:13.459+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:26:13.459+0000] {dag.py:4180} INFO - Setting next_dagrun for crypto_pipeline_dag to 2026-06-19 00:00:00+00:00, run_after=2026-06-20 00:00:00+00:00
+[2026-06-19T16:26:13.493+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crypto_pipeline_dag.py took 0.094 seconds
+[2026-06-19T16:26:44.877+0000] {processor.py:186} INFO - Started process (PID=3627) to work on /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:26:44.878+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crypto_pipeline_dag.py for tasks to queue
+[2026-06-19T16:26:44.880+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:26:44.880+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:26:44.895+0000] {processor.py:925} INFO - DAG(s) 'crypto_pipeline_dag' retrieved from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:26:44.920+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:26:44.920+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-06-19T16:26:44.937+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:26:44.937+0000] {dag.py:4180} INFO - Setting next_dagrun for crypto_pipeline_dag to 2026-06-19 00:00:00+00:00, run_after=2026-06-20 00:00:00+00:00
+[2026-06-19T16:26:44.949+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crypto_pipeline_dag.py took 0.124 seconds
+[2026-06-19T16:27:16.153+0000] {processor.py:186} INFO - Started process (PID=3632) to work on /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:27:16.154+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crypto_pipeline_dag.py for tasks to queue
+[2026-06-19T16:27:16.155+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:27:16.155+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:27:16.167+0000] {processor.py:925} INFO - DAG(s) 'crypto_pipeline_dag' retrieved from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:27:16.187+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:27:16.186+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-06-19T16:27:16.202+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:27:16.202+0000] {dag.py:4180} INFO - Setting next_dagrun for crypto_pipeline_dag to 2026-06-19 00:00:00+00:00, run_after=2026-06-20 00:00:00+00:00
+[2026-06-19T16:27:16.217+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crypto_pipeline_dag.py took 0.068 seconds
+[2026-06-19T16:27:47.452+0000] {processor.py:186} INFO - Started process (PID=3637) to work on /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:27:47.453+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/crypto_pipeline_dag.py for tasks to queue
+[2026-06-19T16:27:47.455+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:27:47.455+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:27:47.467+0000] {processor.py:925} INFO - DAG(s) 'crypto_pipeline_dag' retrieved from /opt/airflow/dags/crypto_pipeline_dag.py
+[2026-06-19T16:27:47.486+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:27:47.486+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-06-19T16:27:47.503+0000] {logging_mixin.py:190} INFO - [2026-06-19T16:27:47.503+0000] {dag.py:4180} INFO - Setting next_dagrun for crypto_pipeline_dag to 2026-06-19 00:00:00+00:00, run_after=2026-06-20 00:00:00+00:00
+[2026-06-19T16:27:47.589+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/crypto_pipeline_dag.py took 0.141 seconds
