@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 def get_minio_client():
     logger.info("Connexion à MinIO")
     return Minio(
-        "localhost:9000",
+          "minio:9000",
         access_key="minioadmin",
         secret_key="minioadmin",
         secure=False
@@ -54,17 +54,38 @@ def get_latest_bronze_file(client):
     return latest_file.object_name
 
 
-def read_bronze_file(client):
+def read_all_bronze_files(client):
 
     bucket_name = "crypto-bronze"
-    object_name = get_latest_bronze_file(client)
 
-    response = client.get_object(bucket_name, object_name)
-    data = json.loads(response.read())
+    objects = list(
+        client.list_objects(bucket_name, recursive=True)
+    )
 
-    logger.info(f"Lecture fichier Bronze : {object_name}")
+    if not objects:
+        raise Exception("Aucun fichier Bronze trouvé")
 
-    return data
+    all_data = []
+
+    print("\n📂 Fichiers Bronze trouvés :")
+
+    for obj in sorted(objects, key=lambda x: x.object_name):
+
+        print(obj.object_name)
+
+        response = client.get_object(
+            bucket_name,
+            obj.object_name
+        )
+
+        content = json.loads(response.read())
+
+        if "data" in content:
+            all_data.extend(content["data"])
+
+    print(f"\n📊 Total lignes récupérées : {len(all_data)}")
+
+    return {"data": all_data}
 
 # =====================================
 # 3. Transformation Silver
@@ -108,23 +129,25 @@ def transform_data(raw_data):
 
     # Date conversion
     df["last_updated"] = pd.to_datetime(df["last_updated"], errors="coerce")
-
+    print(df["last_updated"].min())
+    print(df["last_updated"].max())
+    print(df["last_updated"].nunique())
     # =====================================
     # Features temporelles
     # =====================================
 
-    df["year"] = df["last_updated"].dt.year
-    df["month"] = df["last_updated"].dt.month
-    df["day"] = df["last_updated"].dt.day
-    df["hour"] = df["last_updated"].dt.hour
-    df["minute"] = df["last_updated"].dt.minute
+    # Conserver le timestamp complet
+    df["timestamp"] = df["last_updated"]
 
-    # semaine ISO
-    df["week"] = df["last_updated"].dt.isocalendar().week.astype(int)
-
-    # trimestre
-    df["quarter"] = df["last_updated"].dt.quarter
-    df["date"] = df["last_updated"].dt.date
+    # Extraire les dimensions temporelles
+    df["date"] = df["timestamp"].dt.date
+    df["year"] = df["timestamp"].dt.year
+    df["month"] = df["timestamp"].dt.month
+    df["day"] = df["timestamp"].dt.day
+    df["hour"] = df["timestamp"].dt.hour
+    df["minute"] = df["timestamp"].dt.minute
+    df["week"] = df["timestamp"].dt.isocalendar().week.astype(int)
+    df["quarter"] = df["timestamp"].dt.quarter
 
     # =====================================
     # Missing values check
@@ -162,8 +185,35 @@ def transform_data(raw_data):
     df["collection_date"] = pd.Timestamp.now()
 
     logger.info("Transformation Silver terminée")
+    print("Dates uniques :", df["date"].nunique())
+    print("Heures uniques :", df["hour"].nunique())
+    print("Minutes uniques :", df["minute"].nunique())
+    print("Dates :", sorted(df["date"].unique()))
 
+    print("Heures :", sorted(df["hour"].unique()))
+
+    print("Minutes :", sorted(df["minute"].unique()))
+    print(
+        df[["date", "hour", "minute"]]
+        .drop_duplicates()
+        .sort_values(["hour", "minute"])
+    )
+    #################################
+    print("\nDATES SILVER")
+
+    print(
+        sorted(
+            df["timestamp"].dt.date.unique()
+        )
+    )
+
+    print("\nNB DATES UNIQUES")
+
+    print(
+        df["timestamp"].dt.date.nunique()
+    )
     return df
+    
 # =====================================
 # 4. Sauvegarde Silver
 # =====================================
@@ -214,7 +264,7 @@ def main():
     try:
         client = get_minio_client()
 
-        raw_data = read_bronze_file(client)
+        raw_data = read_all_bronze_files(client)
 
         df = transform_data(raw_data)
 

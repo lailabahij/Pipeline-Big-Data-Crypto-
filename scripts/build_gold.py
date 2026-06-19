@@ -4,10 +4,9 @@ import logging
 from datetime import datetime
 from io import BytesIO
 from minio import Minio
-from minio.error import S3Error
 
 # =====================================
-# LOGGING CONFIG
+# LOGGING
 # =====================================
 logging.basicConfig(
     filename="pipeline_gold.log",
@@ -21,86 +20,91 @@ logger = logging.getLogger(__name__)
 # MINIO CLIENT
 # =====================================
 def get_minio_client():
-    logger.info("Connexion à MinIO...")
     return Minio(
-        "localhost:9000",
+          "minio:9000",
         access_key="minioadmin",
         secret_key="minioadmin",
         secure=False
     )
 
 # =====================================
-# 1. DIMENSIONS
+# 1. DIM CRYPTO (CLEAN + STABLE KEYS)
 # =====================================
-
 def build_dim_crypto(df):
-    logger.info("Construction dim_crypto...")
 
-    dim_crypto = df[["id", "symbol", "name"]].drop_duplicates().copy()
-    logger.info(f"dim_crypto après drop_duplicates: {dim_crypto.shape}")
+    df = df.dropna(subset=["id", "symbol", "name"]).copy()
 
-    dim_crypto = dim_crypto.reset_index(drop=True)
+    # normalize keys
+    df["id"] = df["id"].str.lower().str.strip()
+    df["symbol"] = df["symbol"].str.lower().str.strip()
+    df["name"] = df["name"].str.strip()
+
+    dim_crypto = df[["id", "symbol", "name"]].drop_duplicates().reset_index(drop=True)
+
     dim_crypto["crypto_key"] = dim_crypto.index + 1
 
-    logger.info(f"dim_crypto final: {len(dim_crypto)} lignes")
     return dim_crypto
 
 
+# =====================================
+# 2. DIM DATE (FIX GRANULARITY + NO NULLS)
+# =====================================
 def build_dim_date(df):
-    logger.info("Construction dim_date...")
 
-    dim_date = df[[
-        "date", "year", "month", "day",
-        "hour", "minute", "week", "quarter"
-    ]].drop_duplicates().copy()
+    df = df.copy()
 
-    logger.info(f"dim_date après drop_duplicates: {dim_date.shape}")
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
+    df = df.dropna(subset=["timestamp"])
 
-    dim_date = dim_date.reset_index(drop=True)
+    dim_date = df[["timestamp"]].drop_duplicates().reset_index(drop=True)
+
+    dim_date["date"] = dim_date["timestamp"].dt.date
+    dim_date["year"] = dim_date["timestamp"].dt.year
+    dim_date["month"] = dim_date["timestamp"].dt.month
+    dim_date["day"] = dim_date["timestamp"].dt.day
+    dim_date["hour"] = dim_date["timestamp"].dt.hour
+    dim_date["minute"] = dim_date["timestamp"].dt.minute
+    dim_date["week"] = dim_date["timestamp"].dt.isocalendar().week.astype(int)
+    dim_date["quarter"] = dim_date["timestamp"].dt.quarter
+
     dim_date["date_key"] = dim_date.index + 1
 
-    logger.info(f"dim_date final: {len(dim_date)} lignes")
     return dim_date
 
-# =====================================
-# 2. FACT TABLE
-# =====================================
 
+# =====================================
+# 3. FACT TABLE (CLEAN JOIN SAFE)
+# =====================================
 def build_fact_table(df, dim_crypto, dim_date):
 
-    logger.info("Construction fact_table...")
+    df = df.copy()
 
-    fact = df.copy()
-    logger.info(f"fact initial shape: {fact.shape}")
+    # normalize keys
+    df["id"] = df["id"].str.lower().str.strip()
+    df["symbol"] = df["symbol"].str.lower().str.strip()
 
-    # Join crypto
-    fact = fact.merge(
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
+
+    # join crypto
+    fact = df.merge(
         dim_crypto,
         on=["id", "symbol", "name"],
         how="left"
     )
-    logger.info("Merge dim_crypto terminé")
 
-    # Join date
+    # join date (IMPORTANT FIX)
     fact = fact.merge(
         dim_date,
-        on=["date", "year", "month", "day", "hour", "minute", "week", "quarter"],
+        on=["timestamp"],
         how="left"
     )
-    logger.info("Merge dim_date terminé")
 
-    # Integrity check
-    missing_crypto = fact["crypto_key"].isna().sum()
-    missing_date = fact["date_key"].isna().sum()
+    # DEBUG NULLS
+    print("NULL crypto_key:", fact["crypto_key"].isna().sum())
+    print("NULL date_key:", fact["date_key"].isna().sum())
 
-    logger.info(f"FK check - missing crypto_key: {missing_crypto}")
-    logger.info(f"FK check - missing date_key: {missing_date}")
-
-    if missing_crypto > 0 or missing_date > 0:
-        logger.error("❌ Erreur intégrité référentielle détectée")
-        raise Exception(
-            f"FK non résolues: crypto={missing_crypto}, date={missing_date}"
-        )
+    # REMOVE INVALID ROWS
+    fact = fact.dropna(subset=["crypto_key", "date_key"])
 
     fact = fact[[
         "crypto_key",
@@ -116,26 +120,20 @@ def build_fact_table(df, dim_crypto, dim_date):
         "circulating_supply",
         "max_supply",
         "ath"
-    ]]
-
-    logger.info(f"fact final shape: {fact.shape}")
-    logger.info("fact_table construite avec succès")
+    ]].reset_index(drop=True)
 
     return fact
 
-# =====================================
-# 3. SAVE GOLD
-# =====================================
 
+# =====================================
+# 4. SAVE GOLD (LOCAL + MINIO)
+# =====================================
 def save_gold(client, dim_crypto, dim_date, fact):
-
-    logger.info("Début sauvegarde GOLD...")
 
     bucket = "crypto-gold"
 
     if not client.bucket_exists(bucket):
         client.make_bucket(bucket)
-        logger.info("Bucket crypto-gold créé")
 
     today = datetime.now()
     base_path = f"{today.year}/{today.month:02d}/{today.day:02d}"
@@ -148,81 +146,88 @@ def save_gold(client, dim_crypto, dim_date, fact):
 
     for name, df in tables.items():
 
-        logger.info(f"Sauvegarde table: {name} | shape: {df.shape}")
+        df = df.reset_index(drop=True)
 
-        # LOCAL
+        # LOCAL SAVE
         local_dir = f"../data/gold/{base_path}"
         os.makedirs(local_dir, exist_ok=True)
 
         local_file = f"{local_dir}/{name}.parquet"
-        df.to_parquet(local_file, index=False, engine="pyarrow")
+        df.to_parquet(local_file, index=False)
 
-        logger.info(f"✔ Local saved: {local_file}")
-
-        # MINIO
+        # MINIO SAVE
         buffer = BytesIO()
-        df.to_parquet(buffer, index=False, engine="pyarrow")
+        df.to_parquet(buffer, index=False)
         buffer.seek(0)
-
-        object_name = f"{base_path}/{name}.parquet"
 
         client.put_object(
             bucket,
-            object_name,
+            f"{base_path}/{name}.parquet",
             data=buffer,
             length=buffer.getbuffer().nbytes,
             content_type="application/octet-stream"
         )
 
-        logger.info(f"✔ MinIO saved: {object_name}")
+        logger.info(f"Saved {name} shape={df.shape}")
 
-    logger.info("Sauvegarde GOLD terminée")
 
 # =====================================
-# 4. PIPELINE GOLD
+# 5. MAIN PIPELINE
 # =====================================
+def gold_pipeline(df):
 
-def gold_pipeline(df_silver):
+    print("🚀 START GOLD PIPELINE")
 
-    logger.info("🚀 ===== DÉBUT PIPELINE GOLD =====")
+    # CLEAN INPUT (IMPORTANT FIX)
+    df = df.dropna(subset=["timestamp", "id", "symbol", "name"]).copy()
+    df = df.drop_duplicates()
 
-    logger.info(f"Input silver shape: {df_silver.shape}")
+    print("📊 INPUT SHAPE:", df.shape)
+
+    dim_crypto = build_dim_crypto(df)
+    dim_date = build_dim_date(df)
+    fact = build_fact_table(df, dim_crypto, dim_date)
+
+    print("📊 DIM_CRYPTO:", dim_crypto.shape)
+    print("📊 DIM_DATE:", dim_date.shape)
+    print("📊 FACT:", fact.shape)
 
     client = get_minio_client()
-
-    dim_crypto = build_dim_crypto(df_silver)
-    dim_date = build_dim_date(df_silver)
-
-    fact = build_fact_table(df_silver, dim_crypto, dim_date)
-
     save_gold(client, dim_crypto, dim_date, fact)
+    #############
+    print("\nDATES GOLD")
 
-    logger.info("✅ ===== PIPELINE GOLD TERMINÉ =====")
-
+    print(
+        sorted(
+            dim_date["date"].unique()
+        )
+    )
+    print("✅ GOLD DONE")
     return dim_crypto, dim_date, fact
-
+   
+    ####################
+    
 # =====================================
-# EXECUTION
+# RUN
 # =====================================
-
 if __name__ == "__main__":
-    print("🚀 Lancement pipeline GOLD")
 
-    # =====================================
-    # CHARGEMENT SILVER
-    # =====================================
-    silver_path = "../data/silver/2026/06/12/crypto.parquet"
+    import glob
 
-    if not os.path.exists(silver_path):
-        raise FileNotFoundError(f"Fichier Silver introuvable: {silver_path}")
+    files = glob.glob("../data/silver/*/*/*/crypto.parquet")
 
-    df_silver = pd.read_parquet(silver_path)
+    if not files:
+        raise FileNotFoundError("No silver files found")
 
-    print(f"📊 Silver chargé: {df_silver.shape}")
+    df_silver = pd.concat(
+        [pd.read_parquet(f) for f in files],
+        ignore_index=True
+    )
 
-    # =====================================
-    # PIPELINE GOLD
-    # =====================================
     dim_crypto, dim_date, fact = gold_pipeline(df_silver)
 
-    print("✅ Pipeline terminé avec succès")
+    print("\n📅 DIM_DATE SAMPLE")
+    print(dim_date.head())
+
+    print("\n📊 FACT SAMPLE")
+    print(fact.head())

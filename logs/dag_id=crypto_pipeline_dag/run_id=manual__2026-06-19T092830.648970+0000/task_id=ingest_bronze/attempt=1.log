@@ -1,0 +1,27 @@
+[2026-06-19T09:28:31.477+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-19T09:28:31.489+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.ingest_bronze manual__2026-06-19T09:28:30.648970+00:00 [queued]>
+[2026-06-19T09:28:31.495+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.ingest_bronze manual__2026-06-19T09:28:30.648970+00:00 [queued]>
+[2026-06-19T09:28:31.496+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2026-06-19T09:28:31.504+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): ingest_bronze> on 2026-06-19 09:28:30.648970+00:00
+[2026-06-19T09:28:31.509+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'ingest_bronze', 'manual__2026-06-19T09:28:30.648970+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmp8z4zck6z']
+[2026-06-19T09:28:31.511+0000] {standard_task_runner.py:105} INFO - Job 157: Subtask ingest_bronze
+[2026-06-19T09:28:31.511+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=771) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-19T09:28:31.512+0000] {standard_task_runner.py:72} INFO - Started process 772 to run task
+[2026-06-19T09:28:31.548+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.ingest_bronze manual__2026-06-19T09:28:30.648970+00:00 [running]> on host 7e9583a5360c
+[2026-06-19T09:28:31.606+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='ingest_bronze' AIRFLOW_CTX_EXECUTION_DATE='2026-06-19T09:28:30.648970+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-19T09:28:30.648970+00:00'
+[2026-06-19T09:28:31.607+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-19T09:28:31.620+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-19T09:28:31.621+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python ingest_bronze.py\n        ']
+[2026-06-19T09:28:31.629+0000] {subprocess.py:99} INFO - Output:
+[2026-06-19T09:28:32.474+0000] {subprocess.py:106} INFO - 🚀 Début ingestion Bronze...
+[2026-06-19T09:28:32.475+0000] {subprocess.py:106} INFO - 📊 Nombre de cryptos récupérées : 250
+[2026-06-19T09:28:32.475+0000] {subprocess.py:106} INFO - 💾 Fichier local créé : ../data/bronze/2026/06/19/raw.json
+[2026-06-19T09:28:32.475+0000] {subprocess.py:106} INFO - 🪣 Bucket existant : crypto-bronze
+[2026-06-19T09:28:32.475+0000] {subprocess.py:106} INFO - ☁️ Fichier envoyé vers MinIO : crypto-bronze/2026/06/19/raw.json
+[2026-06-19T09:28:32.475+0000] {subprocess.py:106} INFO - ✅ Ingestion Bronze terminée avec succès.
+[2026-06-19T09:28:32.493+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-19T09:28:32.512+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-19T09:28:32.513+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=crypto_pipeline_dag, task_id=ingest_bronze, run_id=manual__2026-06-19T09:28:30.648970+00:00, execution_date=20260619T092830, start_date=20260619T092831, end_date=20260619T092832
+[2026-06-19T09:28:32.570+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-19T09:28:32.591+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-19T09:28:32.593+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

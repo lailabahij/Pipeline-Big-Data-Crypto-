@@ -1,0 +1,156 @@
+[2026-06-16T15:23:16.885+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-16T15:23:16.904+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [queued]>
+[2026-06-16T15:23:16.912+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [queued]>
+[2026-06-16T15:23:16.914+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2026-06-16T15:23:16.923+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): build_gold_model> on 2026-06-16 00:00:00+00:00
+[2026-06-16T15:23:16.931+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'build_gold_model', 'manual__2026-06-16T00:00:00+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmp368qrhy3']
+[2026-06-16T15:23:16.934+0000] {standard_task_runner.py:105} INFO - Job 64: Subtask build_gold_model
+[2026-06-16T15:23:16.935+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2008) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-16T15:23:16.936+0000] {standard_task_runner.py:72} INFO - Started process 2009 to run task
+[2026-06-16T15:23:16.993+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [running]> on host 7e9583a5360c
+[2026-06-16T15:23:17.075+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='build_gold_model' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-16T00:00:00+00:00'
+[2026-06-16T15:23:17.076+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-16T15:23:17.088+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-16T15:23:17.089+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python build_gold.py\n        ']
+[2026-06-16T15:23:17.098+0000] {subprocess.py:99} INFO - Output:
+[2026-06-16T15:23:18.152+0000] {subprocess.py:106} INFO - 🚀 START GOLD PIPELINE
+[2026-06-16T15:23:18.153+0000] {subprocess.py:106} INFO - 📊 INPUT SHAPE: (249, 25)
+[2026-06-16T15:23:18.153+0000] {subprocess.py:106} INFO - NULL crypto_key: 0
+[2026-06-16T15:23:18.154+0000] {subprocess.py:106} INFO - NULL date_key: 0
+[2026-06-16T15:23:18.154+0000] {subprocess.py:106} INFO - 📊 DIM_CRYPTO: (249, 4)
+[2026-06-16T15:23:18.155+0000] {subprocess.py:106} INFO - 📊 DIM_DATE: (245, 10)
+[2026-06-16T15:23:18.155+0000] {subprocess.py:106} INFO - 📊 FACT: (249, 13)
+[2026-06-16T15:23:18.155+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:23:18.156+0000] {subprocess.py:106} INFO - DATES GOLD
+[2026-06-16T15:23:18.156+0000] {subprocess.py:106} INFO - [datetime.date(2026, 6, 16)]
+[2026-06-16T15:23:18.157+0000] {subprocess.py:106} INFO - ✅ GOLD DONE
+[2026-06-16T15:23:18.157+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:23:18.157+0000] {subprocess.py:106} INFO - 📅 DIM_DATE SAMPLE
+[2026-06-16T15:23:18.158+0000] {subprocess.py:106} INFO -                          timestamp        date  year  ...  week  quarter  date_key
+[2026-06-16T15:23:18.158+0000] {subprocess.py:106} INFO - 0 2026-06-16 15:22:16.692000+00:00  2026-06-16  2026  ...    25        2         1
+[2026-06-16T15:23:18.158+0000] {subprocess.py:106} INFO - 1 2026-06-16 15:22:17.118000+00:00  2026-06-16  2026  ...    25        2         2
+[2026-06-16T15:23:18.159+0000] {subprocess.py:106} INFO - 2 2026-06-16 15:22:16.703000+00:00  2026-06-16  2026  ...    25        2         3
+[2026-06-16T15:23:18.159+0000] {subprocess.py:106} INFO - 3 2026-06-16 15:22:17.346000+00:00  2026-06-16  2026  ...    25        2         4
+[2026-06-16T15:23:18.159+0000] {subprocess.py:106} INFO - 4 2026-06-16 15:22:16.915000+00:00  2026-06-16  2026  ...    25        2         5
+[2026-06-16T15:23:18.159+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:23:18.160+0000] {subprocess.py:106} INFO - [5 rows x 10 columns]
+[2026-06-16T15:23:18.160+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:23:18.160+0000] {subprocess.py:106} INFO - 📊 FACT SAMPLE
+[2026-06-16T15:23:18.160+0000] {subprocess.py:106} INFO -    crypto_key  date_key  ...    max_supply        ath
+[2026-06-16T15:23:18.161+0000] {subprocess.py:106} INFO - 0           1         1  ...  2.100000e+07  126080.00
+[2026-06-16T15:23:18.161+0000] {subprocess.py:106} INFO - 1           2         1  ...  1.000000e+09    4946.05
+[2026-06-16T15:23:18.161+0000] {subprocess.py:106} INFO - 2           3         2  ...  1.000000e+09       1.32
+[2026-06-16T15:23:18.161+0000] {subprocess.py:106} INFO - 3           4         3  ...  2.000000e+08    1369.99
+[2026-06-16T15:23:18.162+0000] {subprocess.py:106} INFO - 4           5         4  ...  1.000000e+11       3.65
+[2026-06-16T15:23:18.162+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:23:18.162+0000] {subprocess.py:106} INFO - [5 rows x 13 columns]
+[2026-06-16T15:23:18.208+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-16T15:23:18.228+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-16T15:23:18.228+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=crypto_pipeline_dag, task_id=build_gold_model, run_id=manual__2026-06-16T00:00:00+00:00, execution_date=20260616T000000, start_date=20260616T152316, end_date=20260616T152318
+[2026-06-16T15:23:18.282+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-16T15:23:18.293+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-16T15:23:18.295+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2026-06-16T15:35:56.492+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-16T15:35:56.507+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [queued]>
+[2026-06-16T15:35:56.513+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [queued]>
+[2026-06-16T15:35:56.513+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2026-06-16T15:35:56.521+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): build_gold_model> on 2026-06-16 00:00:00+00:00
+[2026-06-16T15:35:56.527+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'build_gold_model', 'manual__2026-06-16T00:00:00+00:00', '--job-id', '69', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmp8ikell2n']
+[2026-06-16T15:35:56.528+0000] {standard_task_runner.py:105} INFO - Job 69: Subtask build_gold_model
+[2026-06-16T15:35:56.530+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2454) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-16T15:35:56.531+0000] {standard_task_runner.py:72} INFO - Started process 2455 to run task
+[2026-06-16T15:35:56.565+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [running]> on host 7e9583a5360c
+[2026-06-16T15:35:56.622+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='build_gold_model' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-16T00:00:00+00:00'
+[2026-06-16T15:35:56.624+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-16T15:35:56.636+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-16T15:35:56.637+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python build_gold.py\n        ']
+[2026-06-16T15:35:56.646+0000] {subprocess.py:99} INFO - Output:
+[2026-06-16T15:35:57.569+0000] {subprocess.py:106} INFO - 🚀 START GOLD PIPELINE
+[2026-06-16T15:35:57.570+0000] {subprocess.py:106} INFO - 📊 INPUT SHAPE: (249, 25)
+[2026-06-16T15:35:57.571+0000] {subprocess.py:106} INFO - NULL crypto_key: 0
+[2026-06-16T15:35:57.571+0000] {subprocess.py:106} INFO - NULL date_key: 0
+[2026-06-16T15:35:57.571+0000] {subprocess.py:106} INFO - 📊 DIM_CRYPTO: (249, 4)
+[2026-06-16T15:35:57.572+0000] {subprocess.py:106} INFO - 📊 DIM_DATE: (248, 10)
+[2026-06-16T15:35:57.572+0000] {subprocess.py:106} INFO - 📊 FACT: (249, 13)
+[2026-06-16T15:35:57.572+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:35:57.573+0000] {subprocess.py:106} INFO - DATES GOLD
+[2026-06-16T15:35:57.573+0000] {subprocess.py:106} INFO - [datetime.date(2026, 6, 16)]
+[2026-06-16T15:35:57.573+0000] {subprocess.py:106} INFO - ✅ GOLD DONE
+[2026-06-16T15:35:57.574+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:35:57.574+0000] {subprocess.py:106} INFO - 📅 DIM_DATE SAMPLE
+[2026-06-16T15:35:57.574+0000] {subprocess.py:106} INFO -                          timestamp        date  year  ...  week  quarter  date_key
+[2026-06-16T15:35:57.574+0000] {subprocess.py:106} INFO - 0 2026-06-16 15:35:31.860000+00:00  2026-06-16  2026  ...    25        2         1
+[2026-06-16T15:35:57.575+0000] {subprocess.py:106} INFO - 1 2026-06-16 15:35:32.271000+00:00  2026-06-16  2026  ...    25        2         2
+[2026-06-16T15:35:57.575+0000] {subprocess.py:106} INFO - 2 2026-06-16 15:35:32.287000+00:00  2026-06-16  2026  ...    25        2         3
+[2026-06-16T15:35:57.575+0000] {subprocess.py:106} INFO - 3 2026-06-16 15:35:31.868000+00:00  2026-06-16  2026  ...    25        2         4
+[2026-06-16T15:35:57.575+0000] {subprocess.py:106} INFO - 4 2026-06-16 15:35:32.174000+00:00  2026-06-16  2026  ...    25        2         5
+[2026-06-16T15:35:57.576+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:35:57.576+0000] {subprocess.py:106} INFO - [5 rows x 10 columns]
+[2026-06-16T15:35:57.576+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:35:57.577+0000] {subprocess.py:106} INFO - 📊 FACT SAMPLE
+[2026-06-16T15:35:57.577+0000] {subprocess.py:106} INFO -    crypto_key  date_key  ...    max_supply        ath
+[2026-06-16T15:35:57.577+0000] {subprocess.py:106} INFO - 0           1         1  ...  2.100000e+07  126080.00
+[2026-06-16T15:35:57.577+0000] {subprocess.py:106} INFO - 1           2         2  ...  1.000000e+09    4946.05
+[2026-06-16T15:35:57.577+0000] {subprocess.py:106} INFO - 2           3         3  ...  1.000000e+09       1.32
+[2026-06-16T15:35:57.578+0000] {subprocess.py:106} INFO - 3           4         4  ...  2.000000e+08    1369.99
+[2026-06-16T15:35:57.578+0000] {subprocess.py:106} INFO - 4           5         5  ...  1.000000e+11       3.65
+[2026-06-16T15:35:57.578+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:35:57.578+0000] {subprocess.py:106} INFO - [5 rows x 13 columns]
+[2026-06-16T15:35:57.627+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-16T15:35:57.648+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-16T15:35:57.649+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=crypto_pipeline_dag, task_id=build_gold_model, run_id=manual__2026-06-16T00:00:00+00:00, execution_date=20260616T000000, start_date=20260616T153556, end_date=20260616T153557
+[2026-06-16T15:35:57.709+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-16T15:35:57.720+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-16T15:35:57.721+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2026-06-16T15:42:40.866+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-16T15:42:40.885+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [queued]>
+[2026-06-16T15:42:40.894+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [queued]>
+[2026-06-16T15:42:40.895+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2026-06-16T15:42:40.907+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): build_gold_model> on 2026-06-16 00:00:00+00:00
+[2026-06-16T15:42:40.915+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'build_gold_model', 'manual__2026-06-16T00:00:00+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmp87a_g5h7']
+[2026-06-16T15:42:40.919+0000] {standard_task_runner.py:105} INFO - Job 73: Subtask build_gold_model
+[2026-06-16T15:42:40.921+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2773) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-16T15:42:40.921+0000] {standard_task_runner.py:72} INFO - Started process 2775 to run task
+[2026-06-16T15:42:40.966+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.build_gold_model manual__2026-06-16T00:00:00+00:00 [running]> on host 7e9583a5360c
+[2026-06-16T15:42:41.024+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='build_gold_model' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-16T00:00:00+00:00'
+[2026-06-16T15:42:41.026+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-16T15:42:41.038+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-16T15:42:41.039+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python build_gold.py\n        ']
+[2026-06-16T15:42:41.047+0000] {subprocess.py:99} INFO - Output:
+[2026-06-16T15:42:41.976+0000] {subprocess.py:106} INFO - 🚀 START GOLD PIPELINE
+[2026-06-16T15:42:41.976+0000] {subprocess.py:106} INFO - 📊 INPUT SHAPE: (249, 25)
+[2026-06-16T15:42:41.977+0000] {subprocess.py:106} INFO - NULL crypto_key: 0
+[2026-06-16T15:42:41.977+0000] {subprocess.py:106} INFO - NULL date_key: 0
+[2026-06-16T15:42:41.977+0000] {subprocess.py:106} INFO - 📊 DIM_CRYPTO: (249, 4)
+[2026-06-16T15:42:41.977+0000] {subprocess.py:106} INFO - 📊 DIM_DATE: (243, 10)
+[2026-06-16T15:42:41.978+0000] {subprocess.py:106} INFO - 📊 FACT: (249, 13)
+[2026-06-16T15:42:41.978+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:42:41.978+0000] {subprocess.py:106} INFO - DATES GOLD
+[2026-06-16T15:42:41.979+0000] {subprocess.py:106} INFO - [datetime.date(2026, 6, 16)]
+[2026-06-16T15:42:41.979+0000] {subprocess.py:106} INFO - ✅ GOLD DONE
+[2026-06-16T15:42:41.979+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:42:41.980+0000] {subprocess.py:106} INFO - 📅 DIM_DATE SAMPLE
+[2026-06-16T15:42:41.981+0000] {subprocess.py:106} INFO -                          timestamp        date  year  ...  week  quarter  date_key
+[2026-06-16T15:42:41.982+0000] {subprocess.py:106} INFO - 0 2026-06-16 15:41:28.614000+00:00  2026-06-16  2026  ...    25        2         1
+[2026-06-16T15:42:41.982+0000] {subprocess.py:106} INFO - 1 2026-06-16 15:41:28.453000+00:00  2026-06-16  2026  ...    25        2         2
+[2026-06-16T15:42:41.982+0000] {subprocess.py:106} INFO - 2 2026-06-16 15:41:28.490000+00:00  2026-06-16  2026  ...    25        2         3
+[2026-06-16T15:42:41.982+0000] {subprocess.py:106} INFO - 3 2026-06-16 15:41:28.456000+00:00  2026-06-16  2026  ...    25        2         4
+[2026-06-16T15:42:41.983+0000] {subprocess.py:106} INFO - 4 2026-06-16 15:41:32.145000+00:00  2026-06-16  2026  ...    25        2         5
+[2026-06-16T15:42:41.983+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:42:41.983+0000] {subprocess.py:106} INFO - [5 rows x 10 columns]
+[2026-06-16T15:42:41.984+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:42:41.984+0000] {subprocess.py:106} INFO - 📊 FACT SAMPLE
+[2026-06-16T15:42:41.985+0000] {subprocess.py:106} INFO -    crypto_key  date_key  ...    max_supply        ath
+[2026-06-16T15:42:41.985+0000] {subprocess.py:106} INFO - 0           1         1  ...  2.100000e+07  126080.00
+[2026-06-16T15:42:41.985+0000] {subprocess.py:106} INFO - 1           2         2  ...  1.000000e+09    4946.05
+[2026-06-16T15:42:41.986+0000] {subprocess.py:106} INFO - 2           3         3  ...  1.000000e+09       1.32
+[2026-06-16T15:42:41.986+0000] {subprocess.py:106} INFO - 3           4         4  ...  2.000000e+08    1369.99
+[2026-06-16T15:42:41.986+0000] {subprocess.py:106} INFO - 4           5         5  ...  1.000000e+11       3.65
+[2026-06-16T15:42:41.986+0000] {subprocess.py:106} INFO - 
+[2026-06-16T15:42:41.987+0000] {subprocess.py:106} INFO - [5 rows x 13 columns]
+[2026-06-16T15:42:42.041+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-16T15:42:42.073+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-16T15:42:42.074+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=crypto_pipeline_dag, task_id=build_gold_model, run_id=manual__2026-06-16T00:00:00+00:00, execution_date=20260616T000000, start_date=20260616T154240, end_date=20260616T154242
+[2026-06-16T15:42:42.105+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-16T15:42:42.122+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-16T15:42:42.123+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

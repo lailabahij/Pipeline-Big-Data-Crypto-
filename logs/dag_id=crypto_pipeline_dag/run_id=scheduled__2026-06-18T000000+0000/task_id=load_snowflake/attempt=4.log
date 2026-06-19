@@ -1,0 +1,209 @@
+[2026-06-19T09:16:01.544+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-19T09:16:01.560+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.load_snowflake scheduled__2026-06-18T00:00:00+00:00 [queued]>
+[2026-06-19T09:16:01.566+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.load_snowflake scheduled__2026-06-18T00:00:00+00:00 [queued]>
+[2026-06-19T09:16:01.567+0000] {taskinstance.py:2867} INFO - Starting attempt 4 of 4
+[2026-06-19T09:16:01.576+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): load_snowflake> on 2026-06-18 00:00:00+00:00
+[2026-06-19T09:16:01.584+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'load_snowflake', 'scheduled__2026-06-18T00:00:00+00:00', '--job-id', '156', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmpljq_ck0j']
+[2026-06-19T09:16:01.586+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=609) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-19T09:16:01.586+0000] {standard_task_runner.py:105} INFO - Job 156: Subtask load_snowflake
+[2026-06-19T09:16:01.587+0000] {standard_task_runner.py:72} INFO - Started process 610 to run task
+[2026-06-19T09:16:01.630+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.load_snowflake scheduled__2026-06-18T00:00:00+00:00 [running]> on host 7e9583a5360c
+[2026-06-19T09:16:01.697+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='load_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-06-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-18T00:00:00+00:00'
+[2026-06-19T09:16:01.698+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-19T09:16:01.714+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-19T09:16:01.715+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python load_snowflake.py\n        ']
+[2026-06-19T09:16:01.724+0000] {subprocess.py:99} INFO - Output:
+[2026-06-19T09:16:20.086+0000] {subprocess.py:106} INFO - 🚀 START SNOWFLAKE LOAD
+[2026-06-19T09:16:20.088+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.089+0000] {subprocess.py:106} INFO - DATES DANS GOLD
+[2026-06-19T09:16:20.089+0000] {subprocess.py:106} INFO - [datetime.date(2026, 6, 16), datetime.date(2026, 6, 18)]
+[2026-06-19T09:16:20.090+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.090+0000] {subprocess.py:106} INFO - SHAPES
+[2026-06-19T09:16:20.091+0000] {subprocess.py:106} INFO - DIM_CRYPTO : (252, 4)
+[2026-06-19T09:16:20.091+0000] {subprocess.py:106} INFO - DIM_DATE   : (492, 9)
+[2026-06-19T09:16:20.091+0000] {subprocess.py:106} INFO - FACT       : (1243, 13)
+[2026-06-19T09:16:20.092+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-06-19T09:16:20.092+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connection.py", line 174, in _new_conn
+[2026-06-19T09:16:20.092+0000] {subprocess.py:106} INFO -     conn = connection.create_connection(
+[2026-06-19T09:16:20.093+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.093+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/util/connection.py", line 79, in create_connection
+[2026-06-19T09:16:20.094+0000] {subprocess.py:106} INFO -     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+[2026-06-19T09:16:20.094+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.094+0000] {subprocess.py:106} INFO -   File "/usr/local/lib/python3.12/socket.py", line 978, in getaddrinfo
+[2026-06-19T09:16:20.094+0000] {subprocess.py:106} INFO -     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+[2026-06-19T09:16:20.094+0000] {subprocess.py:106} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.095+0000] {subprocess.py:106} INFO - socket.gaierror: [Errno -5] No address associated with hostname
+[2026-06-19T09:16:20.095+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.095+0000] {subprocess.py:106} INFO - During handling of the above exception, another exception occurred:
+[2026-06-19T09:16:20.095+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.096+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-06-19T09:16:20.096+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 715, in urlopen
+[2026-06-19T09:16:20.096+0000] {subprocess.py:106} INFO -     httplib_response = self._make_request(
+[2026-06-19T09:16:20.096+0000] {subprocess.py:106} INFO -                        ^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.096+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 404, in _make_request
+[2026-06-19T09:16:20.097+0000] {subprocess.py:106} INFO -     self._validate_conn(conn)
+[2026-06-19T09:16:20.097+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 1058, in _validate_conn
+[2026-06-19T09:16:20.097+0000] {subprocess.py:106} INFO -     conn.connect()
+[2026-06-19T09:16:20.097+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connection.py", line 363, in connect
+[2026-06-19T09:16:20.098+0000] {subprocess.py:106} INFO -     self.sock = conn = self._new_conn()
+[2026-06-19T09:16:20.098+0000] {subprocess.py:106} INFO -                        ^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.098+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connection.py", line 186, in _new_conn
+[2026-06-19T09:16:20.098+0000] {subprocess.py:106} INFO -     raise NewConnectionError(
+[2026-06-19T09:16:20.099+0000] {subprocess.py:106} INFO - snowflake.connector.vendored.urllib3.exceptions.NewConnectionError: <snowflake.connector.vendored.urllib3.connection.HTTPSConnection object at 0x74fc35be0a10>: Failed to establish a new connection: [Errno -5] No address associated with hostname
+[2026-06-19T09:16:20.099+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.099+0000] {subprocess.py:106} INFO - During handling of the above exception, another exception occurred:
+[2026-06-19T09:16:20.099+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.099+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-06-19T09:16:20.100+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/requests/adapters.py", line 486, in send
+[2026-06-19T09:16:20.100+0000] {subprocess.py:106} INFO -     resp = conn.urlopen(
+[2026-06-19T09:16:20.100+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^
+[2026-06-19T09:16:20.100+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 827, in urlopen
+[2026-06-19T09:16:20.100+0000] {subprocess.py:106} INFO -     return self.urlopen(
+[2026-06-19T09:16:20.101+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^
+[2026-06-19T09:16:20.101+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/connectionpool.py", line 799, in urlopen
+[2026-06-19T09:16:20.101+0000] {subprocess.py:106} INFO -     retries = retries.increment(
+[2026-06-19T09:16:20.101+0000] {subprocess.py:106} INFO -               ^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.102+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/urllib3/util/retry.py", line 592, in increment
+[2026-06-19T09:16:20.102+0000] {subprocess.py:106} INFO -     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+[2026-06-19T09:16:20.102+0000] {subprocess.py:106} INFO - snowflake.connector.vendored.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='pj74301.eu-west-3.aws.snowflakecomputing.com', port=443): Max retries exceeded with url: /session/v1/login-request?request_id=91b35790-83fe-416c-88aa-f028c73df321&databaseName=CRYPTO_DB&schemaName=GOLD&warehouse=COMPUTE_WH&request_guid=1157bed0-0b27-462f-be88-ba43da5b1c3e (Caused by NewConnectionError('<snowflake.connector.vendored.urllib3.connection.HTTPSConnection object at 0x74fc35be0a10>: Failed to establish a new connection: [Errno -5] No address associated with hostname'))
+[2026-06-19T09:16:20.102+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.102+0000] {subprocess.py:106} INFO - During handling of the above exception, another exception occurred:
+[2026-06-19T09:16:20.103+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.103+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-06-19T09:16:20.103+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/network.py", line 1081, in _request_exec
+[2026-06-19T09:16:20.103+0000] {subprocess.py:106} INFO -     raw_ret = session.request(
+[2026-06-19T09:16:20.104+0000] {subprocess.py:106} INFO -               ^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.104+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/requests/sessions.py", line 589, in request
+[2026-06-19T09:16:20.104+0000] {subprocess.py:106} INFO -     resp = self.send(prep, **send_kwargs)
+[2026-06-19T09:16:20.104+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.104+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/requests/sessions.py", line 703, in send
+[2026-06-19T09:16:20.105+0000] {subprocess.py:106} INFO -     r = adapter.send(request, **kwargs)
+[2026-06-19T09:16:20.105+0000] {subprocess.py:106} INFO -         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.105+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/vendored/requests/adapters.py", line 519, in send
+[2026-06-19T09:16:20.105+0000] {subprocess.py:106} INFO -     raise ConnectionError(e, request=request)
+[2026-06-19T09:16:20.105+0000] {subprocess.py:106} INFO - snowflake.connector.vendored.requests.exceptions.ConnectionError: HTTPSConnectionPool(host='pj74301.eu-west-3.aws.snowflakecomputing.com', port=443): Max retries exceeded with url: /session/v1/login-request?request_id=91b35790-83fe-416c-88aa-f028c73df321&databaseName=CRYPTO_DB&schemaName=GOLD&warehouse=COMPUTE_WH&request_guid=1157bed0-0b27-462f-be88-ba43da5b1c3e (Caused by NewConnectionError('<snowflake.connector.vendored.urllib3.connection.HTTPSConnection object at 0x74fc35be0a10>: Failed to establish a new connection: [Errno -5] No address associated with hostname'))
+[2026-06-19T09:16:20.106+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.106+0000] {subprocess.py:106} INFO - During handling of the above exception, another exception occurred:
+[2026-06-19T09:16:20.106+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.106+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-06-19T09:16:20.107+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/connection.py", line 1432, in _authenticate
+[2026-06-19T09:16:20.107+0000] {subprocess.py:106} INFO -     auth.authenticate(
+[2026-06-19T09:16:20.107+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/auth/_auth.py", line 265, in authenticate
+[2026-06-19T09:16:20.107+0000] {subprocess.py:106} INFO -     ret = self._rest._post_request(
+[2026-06-19T09:16:20.107+0000] {subprocess.py:106} INFO -           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.108+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/network.py", line 749, in _post_request
+[2026-06-19T09:16:20.108+0000] {subprocess.py:106} INFO -     ret = self.fetch(
+[2026-06-19T09:16:20.108+0000] {subprocess.py:106} INFO -           ^^^^^^^^^^^
+[2026-06-19T09:16:20.108+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/network.py", line 864, in fetch
+[2026-06-19T09:16:20.109+0000] {subprocess.py:106} INFO -     ret = self._request_exec_wrapper(
+[2026-06-19T09:16:20.109+0000] {subprocess.py:106} INFO -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.109+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/network.py", line 992, in _request_exec_wrapper
+[2026-06-19T09:16:20.109+0000] {subprocess.py:106} INFO -     raise e
+[2026-06-19T09:16:20.110+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/network.py", line 914, in _request_exec_wrapper
+[2026-06-19T09:16:20.110+0000] {subprocess.py:106} INFO -     return_object = self._request_exec(
+[2026-06-19T09:16:20.110+0000] {subprocess.py:106} INFO -                     ^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.110+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/network.py", line 1179, in _request_exec
+[2026-06-19T09:16:20.110+0000] {subprocess.py:106} INFO -     raise OperationalError(
+[2026-06-19T09:16:20.111+0000] {subprocess.py:106} INFO - snowflake.connector.errors.OperationalError: 251011: ConnectionTimeout occurred during login. Will be handled by authenticator
+[2026-06-19T09:16:20.111+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.111+0000] {subprocess.py:106} INFO - The above exception was the direct cause of the following exception:
+[2026-06-19T09:16:20.111+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:16:20.111+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-06-19T09:16:20.112+0000] {subprocess.py:106} INFO -   File "/opt/***/scripts/load_snowflake.py", line 300, in <module>
+[2026-06-19T09:16:20.112+0000] {subprocess.py:106} INFO -     snowflake_pipeline()
+[2026-06-19T09:16:20.112+0000] {subprocess.py:106} INFO -   File "/opt/***/scripts/load_snowflake.py", line 214, in snowflake_pipeline
+[2026-06-19T09:16:20.112+0000] {subprocess.py:106} INFO -     conn = get_connection()
+[2026-06-19T09:16:20.112+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.113+0000] {subprocess.py:106} INFO -   File "/opt/***/scripts/load_snowflake.py", line 26, in get_connection
+[2026-06-19T09:16:20.113+0000] {subprocess.py:106} INFO -     return snowflake.connector.connect(
+[2026-06-19T09:16:20.113+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.113+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/__init__.py", line 55, in Connect
+[2026-06-19T09:16:20.114+0000] {subprocess.py:106} INFO -     return SnowflakeConnection(**kwargs)
+[2026-06-19T09:16:20.114+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-06-19T09:16:20.114+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/connection.py", line 467, in __init__
+[2026-06-19T09:16:20.114+0000] {subprocess.py:106} INFO -     self.connect(**kwargs)
+[2026-06-19T09:16:20.115+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/connection.py", line 786, in connect
+[2026-06-19T09:16:20.115+0000] {subprocess.py:106} INFO -     self.__open_connection()
+[2026-06-19T09:16:20.115+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/connection.py", line 1116, in __open_connection
+[2026-06-19T09:16:20.116+0000] {subprocess.py:106} INFO -     self.authenticate_with_retry(self.auth_class)
+[2026-06-19T09:16:20.116+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/connection.py", line 1404, in authenticate_with_retry
+[2026-06-19T09:16:20.116+0000] {subprocess.py:106} INFO -     self._authenticate(auth_instance)
+[2026-06-19T09:16:20.116+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/connection.py", line 1478, in _authenticate
+[2026-06-19T09:16:20.117+0000] {subprocess.py:106} INFO -     raise auth_op from e
+[2026-06-19T09:16:20.117+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/connection.py", line 1453, in _authenticate
+[2026-06-19T09:16:20.117+0000] {subprocess.py:106} INFO -     auth_instance.handle_timeout(
+[2026-06-19T09:16:20.117+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/snowflake/connector/auth/by_plugin.py", line 213, in handle_timeout
+[2026-06-19T09:16:20.117+0000] {subprocess.py:106} INFO -     raise error
+[2026-06-19T09:16:20.118+0000] {subprocess.py:106} INFO - snowflake.connector.errors.OperationalError: 250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+[2026-06-19T09:16:20.169+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-06-19T09:16:20.179+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-06-19T09:16:20.183+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=crypto_pipeline_dag, task_id=load_snowflake, run_id=scheduled__2026-06-18T00:00:00+00:00, execution_date=20260618T000000, start_date=20260619T091601, end_date=20260619T091620
+[2026-06-19T09:16:20.202+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-19T09:16:20.203+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 156 for task load_snowflake (Bash command failed. The command returned a non-zero exit code 1.; 610)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-06-19T09:16:20.214+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-06-19T09:16:20.224+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-19T09:16:20.226+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

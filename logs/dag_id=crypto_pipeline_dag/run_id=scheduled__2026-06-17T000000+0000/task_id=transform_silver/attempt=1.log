@@ -1,0 +1,55 @@
+[2026-06-18T08:31:49.882+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-18T08:31:49.899+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.transform_silver scheduled__2026-06-17T00:00:00+00:00 [queued]>
+[2026-06-18T08:31:49.906+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.transform_silver scheduled__2026-06-17T00:00:00+00:00 [queued]>
+[2026-06-18T08:31:49.908+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2026-06-18T08:31:49.917+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): transform_silver> on 2026-06-17 00:00:00+00:00
+[2026-06-18T08:31:49.928+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=390) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-18T08:31:49.929+0000] {standard_task_runner.py:72} INFO - Started process 396 to run task
+[2026-06-18T08:31:49.929+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'transform_silver', 'scheduled__2026-06-17T00:00:00+00:00', '--job-id', '132', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmpcwb5lag0']
+[2026-06-18T08:31:49.931+0000] {standard_task_runner.py:105} INFO - Job 132: Subtask transform_silver
+[2026-06-18T08:31:49.975+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.transform_silver scheduled__2026-06-17T00:00:00+00:00 [running]> on host 7e9583a5360c
+[2026-06-18T08:31:50.032+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='transform_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-06-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-17T00:00:00+00:00'
+[2026-06-18T08:31:50.033+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-18T08:31:50.043+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-18T08:31:50.045+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python transform_silver.py\n        ']
+[2026-06-18T08:31:50.052+0000] {subprocess.py:99} INFO - Output:
+[2026-06-18T08:31:51.083+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:31:51.084+0000] {subprocess.py:106} INFO - 📂 Fichiers Bronze trouvés :
+[2026-06-18T08:31:51.084+0000] {subprocess.py:106} INFO - 2026/06/16/raw.json
+[2026-06-18T08:31:51.085+0000] {subprocess.py:106} INFO - 2026/06/18/raw.json
+[2026-06-18T08:31:51.085+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:31:51.085+0000] {subprocess.py:106} INFO - 📊 Total lignes récupérées : 500
+[2026-06-18T08:31:51.085+0000] {subprocess.py:106} INFO - 2026-06-04 17:58:24.894000+00:00
+[2026-06-18T08:31:51.086+0000] {subprocess.py:106} INFO - 2026-06-18 08:27:48.935000+00:00
+[2026-06-18T08:31:51.086+0000] {subprocess.py:106} INFO - 494
+[2026-06-18T08:31:51.086+0000] {subprocess.py:106} INFO - Dates uniques : 2
+[2026-06-18T08:31:51.086+0000] {subprocess.py:106} INFO - Heures uniques : 2
+[2026-06-18T08:31:51.087+0000] {subprocess.py:106} INFO - Minutes uniques : 12
+[2026-06-18T08:31:51.087+0000] {subprocess.py:106} INFO - Dates : [datetime.date(2026, 6, 16), datetime.date(2026, 6, 18)]
+[2026-06-18T08:31:51.087+0000] {subprocess.py:106} INFO - Heures : [8, 15]
+[2026-06-18T08:31:51.087+0000] {subprocess.py:106} INFO - Minutes : [0, 5, 10, 15, 20, 25, 27, 30, 35, 40, 45, 46]
+[2026-06-18T08:31:51.088+0000] {subprocess.py:106} INFO -            date  hour  minute
+[2026-06-18T08:31:51.088+0000] {subprocess.py:106} INFO - 320  2026-06-18     8       0
+[2026-06-18T08:31:51.088+0000] {subprocess.py:106} INFO - 344  2026-06-18     8       5
+[2026-06-18T08:31:51.089+0000] {subprocess.py:106} INFO - 355  2026-06-18     8      10
+[2026-06-18T08:31:51.089+0000] {subprocess.py:106} INFO - 325  2026-06-18     8      15
+[2026-06-18T08:31:51.089+0000] {subprocess.py:106} INFO - 462  2026-06-18     8      20
+[2026-06-18T08:31:51.090+0000] {subprocess.py:106} INFO - 289  2026-06-18     8      25
+[2026-06-18T08:31:51.090+0000] {subprocess.py:106} INFO - 250  2026-06-18     8      27
+[2026-06-18T08:31:51.090+0000] {subprocess.py:106} INFO - 104  2026-06-16    15      30
+[2026-06-18T08:31:51.090+0000] {subprocess.py:106} INFO - 222  2026-06-16    15      35
+[2026-06-18T08:31:51.091+0000] {subprocess.py:106} INFO - 69   2026-06-16    15      40
+[2026-06-18T08:31:51.091+0000] {subprocess.py:106} INFO - 40   2026-06-16    15      45
+[2026-06-18T08:31:51.091+0000] {subprocess.py:106} INFO - 0    2026-06-16    15      46
+[2026-06-18T08:31:51.091+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:31:51.092+0000] {subprocess.py:106} INFO - DATES SILVER
+[2026-06-18T08:31:51.092+0000] {subprocess.py:106} INFO - [datetime.date(2026, 6, 16), datetime.date(2026, 6, 18)]
+[2026-06-18T08:31:51.092+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:31:51.093+0000] {subprocess.py:106} INFO - NB DATES UNIQUES
+[2026-06-18T08:31:51.093+0000] {subprocess.py:106} INFO - 2
+[2026-06-18T08:31:51.173+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-18T08:31:51.195+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-18T08:31:51.196+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=crypto_pipeline_dag, task_id=transform_silver, run_id=scheduled__2026-06-17T00:00:00+00:00, execution_date=20260617T000000, start_date=20260618T083149, end_date=20260618T083151
+[2026-06-18T08:31:51.228+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-18T08:31:51.247+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-18T08:31:51.249+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

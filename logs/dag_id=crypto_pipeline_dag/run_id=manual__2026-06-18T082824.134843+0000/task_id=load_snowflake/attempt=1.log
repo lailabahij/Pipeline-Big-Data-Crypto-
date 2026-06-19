@@ -1,0 +1,46 @@
+[2026-06-18T08:28:31.303+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-18T08:28:31.317+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.load_snowflake manual__2026-06-18T08:28:24.134843+00:00 [queued]>
+[2026-06-18T08:28:31.324+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.load_snowflake manual__2026-06-18T08:28:24.134843+00:00 [queued]>
+[2026-06-18T08:28:31.325+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2026-06-18T08:28:31.333+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): load_snowflake> on 2026-06-18 08:28:24.134843+00:00
+[2026-06-18T08:28:31.341+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'load_snowflake', 'manual__2026-06-18T08:28:24.134843+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmpkmmm29tm']
+[2026-06-18T08:28:31.343+0000] {standard_task_runner.py:105} INFO - Job 124: Subtask load_snowflake
+[2026-06-18T08:28:31.345+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=288) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-18T08:28:31.346+0000] {standard_task_runner.py:72} INFO - Started process 289 to run task
+[2026-06-18T08:28:31.380+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.load_snowflake manual__2026-06-18T08:28:24.134843+00:00 [running]> on host 7e9583a5360c
+[2026-06-18T08:28:31.434+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='load_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-06-18T08:28:24.134843+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-18T08:28:24.134843+00:00'
+[2026-06-18T08:28:31.435+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-18T08:28:31.446+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-18T08:28:31.447+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python load_snowflake.py\n        ']
+[2026-06-18T08:28:31.453+0000] {subprocess.py:99} INFO - Output:
+[2026-06-18T08:28:52.765+0000] {subprocess.py:106} INFO - 🚀 START SNOWFLAKE LOAD
+[2026-06-18T08:28:52.767+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:28:52.772+0000] {subprocess.py:106} INFO - DATES DANS GOLD
+[2026-06-18T08:28:52.772+0000] {subprocess.py:106} INFO - [datetime.date(2026, 6, 16), datetime.date(2026, 6, 18)]
+[2026-06-18T08:28:52.773+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:28:52.774+0000] {subprocess.py:106} INFO - SHAPES
+[2026-06-18T08:28:52.774+0000] {subprocess.py:106} INFO - DIM_CRYPTO : (252, 4)
+[2026-06-18T08:28:52.774+0000] {subprocess.py:106} INFO - DIM_DATE   : (492, 9)
+[2026-06-18T08:28:52.775+0000] {subprocess.py:106} INFO - FACT       : (746, 13)
+[2026-06-18T08:28:52.775+0000] {subprocess.py:106} INFO - ✅ Tables créées
+[2026-06-18T08:28:52.775+0000] {subprocess.py:106} INFO - 🧹 Tables vidées avant chargement
+[2026-06-18T08:28:52.775+0000] {subprocess.py:106} INFO - ✅ DIM_CRYPTO: 252 lignes
+[2026-06-18T08:28:52.776+0000] {subprocess.py:106} INFO - ✅ DIM_DATE: 492 lignes
+[2026-06-18T08:28:52.776+0000] {subprocess.py:106} INFO - ✅ FACT_CRYPTO_SNAPSHOT: 746 lignes
+[2026-06-18T08:28:52.776+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:28:52.776+0000] {subprocess.py:106} INFO - 📊 VALIDATION
+[2026-06-18T08:28:52.777+0000] {subprocess.py:106} INFO - DIM_CRYPTO : 252
+[2026-06-18T08:28:52.777+0000] {subprocess.py:106} INFO - DIM_DATE : 492
+[2026-06-18T08:28:52.777+0000] {subprocess.py:106} INFO - FACT : 746
+[2026-06-18T08:28:52.778+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:28:52.778+0000] {subprocess.py:106} INFO - 📅 DATES DANS SNOWFLAKE
+[2026-06-18T08:28:52.778+0000] {subprocess.py:106} INFO - 2026-06-16
+[2026-06-18T08:28:52.778+0000] {subprocess.py:106} INFO - 2026-06-18
+[2026-06-18T08:28:52.779+0000] {subprocess.py:106} INFO - 
+[2026-06-18T08:28:52.779+0000] {subprocess.py:106} INFO - ✅ LOAD TERMINÉ
+[2026-06-18T08:28:52.844+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-18T08:28:52.879+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-18T08:28:52.880+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=crypto_pipeline_dag, task_id=load_snowflake, run_id=manual__2026-06-18T08:28:24.134843+00:00, execution_date=20260618T082824, start_date=20260618T082831, end_date=20260618T082852
+[2026-06-18T08:28:52.932+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-18T08:28:52.945+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-18T08:28:52.947+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

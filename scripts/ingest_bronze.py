@@ -110,7 +110,7 @@ def get_minio_client():
     """Connexion au serveur MinIO"""
 
     client = Minio(
-        "localhost:9000",
+          "minio:9000",
         access_key="minioadmin",
         secret_key="minioadmin",
         secure=False

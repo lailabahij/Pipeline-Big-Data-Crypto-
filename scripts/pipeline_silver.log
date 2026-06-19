@@ -18,3 +18,672 @@ dtype: int64
 2026-06-12 12:39:26,373 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/12/crypto.parquet
 2026-06-12 12:39:26,380 - INFO - Fichier MinIO sauvegardé : 2026/06/12/crypto.parquet
 2026-06-12 12:39:26,380 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 09:52:43,814 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 09:52:43,814 - INFO - Connexion à MinIO
+2026-06-15 09:52:43,826 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 09:52:43,829 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 09:52:43,833 - INFO - Nombre de lignes initiales : 250
+2026-06-15 09:52:43,845 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 09:52:43,845 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 09:52:43,845 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 09:52:43,847 - INFO - Lignes supprimées : 3
+2026-06-15 09:52:43,847 - INFO - Lignes restantes : 247
+2026-06-15 09:52:43,847 - INFO - Transformation Silver terminée
+2026-06-15 09:52:43,862 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 09:52:43,868 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 09:52:43,869 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 10:01:05,847 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 10:01:05,847 - INFO - Connexion à MinIO
+2026-06-15 10:01:05,871 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 10:01:05,875 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 10:01:05,878 - INFO - Nombre de lignes initiales : 250
+2026-06-15 10:01:05,889 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 10:01:05,889 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 10:01:05,889 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 10:01:05,891 - INFO - Lignes supprimées : 3
+2026-06-15 10:01:05,891 - INFO - Lignes restantes : 247
+2026-06-15 10:01:05,891 - INFO - Transformation Silver terminée
+2026-06-15 10:01:05,906 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 10:01:05,914 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 10:01:05,914 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 10:02:51,175 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 10:02:51,175 - INFO - Connexion à MinIO
+2026-06-15 10:02:51,204 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 10:02:51,207 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 10:02:51,211 - INFO - Nombre de lignes initiales : 250
+2026-06-15 10:02:51,222 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 10:02:51,222 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 10:02:51,222 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 10:02:51,223 - INFO - Lignes supprimées : 3
+2026-06-15 10:02:51,223 - INFO - Lignes restantes : 247
+2026-06-15 10:02:51,224 - INFO - Transformation Silver terminée
+2026-06-15 10:02:51,242 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 10:02:51,252 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 10:02:51,253 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 10:08:39,967 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 10:08:39,967 - INFO - Connexion à MinIO
+2026-06-15 10:08:39,988 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 10:08:40,002 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 10:08:40,006 - INFO - Nombre de lignes initiales : 250
+2026-06-15 10:08:40,017 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 10:08:40,017 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 10:08:40,017 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 10:08:40,019 - INFO - Lignes supprimées : 3
+2026-06-15 10:08:40,019 - INFO - Lignes restantes : 247
+2026-06-15 10:08:40,019 - INFO - Transformation Silver terminée
+2026-06-15 10:08:40,036 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 10:08:40,046 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 10:08:40,046 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 10:12:16,256 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 10:12:16,256 - INFO - Connexion à MinIO
+2026-06-15 10:12:16,280 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 10:12:16,284 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 10:12:16,287 - INFO - Nombre de lignes initiales : 250
+2026-06-15 10:12:16,299 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 10:12:16,299 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 10:12:16,299 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 10:12:16,300 - INFO - Lignes supprimées : 3
+2026-06-15 10:12:16,300 - INFO - Lignes restantes : 247
+2026-06-15 10:12:16,300 - INFO - Transformation Silver terminée
+2026-06-15 10:12:16,318 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 10:12:16,329 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 10:12:16,329 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 10:13:59,345 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 10:13:59,346 - INFO - Connexion à MinIO
+2026-06-15 10:13:59,374 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 10:13:59,378 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 10:13:59,381 - INFO - Nombre de lignes initiales : 250
+2026-06-15 10:13:59,393 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 10:13:59,393 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 10:13:59,393 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 10:13:59,395 - INFO - Lignes supprimées : 3
+2026-06-15 10:13:59,395 - INFO - Lignes restantes : 247
+2026-06-15 10:13:59,395 - INFO - Transformation Silver terminée
+2026-06-15 10:13:59,412 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 10:13:59,423 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 10:13:59,423 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 10:14:44,322 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 10:14:44,322 - INFO - Connexion à MinIO
+2026-06-15 10:14:44,333 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 10:14:44,337 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 10:14:44,341 - INFO - Nombre de lignes initiales : 250
+2026-06-15 10:14:44,353 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 10:14:44,353 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 10:14:44,353 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 10:14:44,354 - INFO - Lignes supprimées : 3
+2026-06-15 10:14:44,354 - INFO - Lignes restantes : 247
+2026-06-15 10:14:44,355 - INFO - Transformation Silver terminée
+2026-06-15 10:14:44,376 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 10:14:44,385 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 10:14:44,385 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 10:16:26,266 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 10:16:26,266 - INFO - Connexion à MinIO
+2026-06-15 10:16:26,289 - INFO - Fichier Bronze sélectionné : 2026/06/15/raw.json
+2026-06-15 10:16:26,292 - INFO - Lecture fichier Bronze : 2026/06/15/raw.json
+2026-06-15 10:16:26,296 - INFO - Nombre de lignes initiales : 250
+2026-06-15 10:16:26,307 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     111
+dtype: int64
+2026-06-15 10:16:26,308 - INFO - Skewness max_supply = 5.944591688444221
+2026-06-15 10:16:26,308 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 10:16:26,309 - INFO - Lignes supprimées : 3
+2026-06-15 10:16:26,309 - INFO - Lignes restantes : 247
+2026-06-15 10:16:26,309 - INFO - Transformation Silver terminée
+2026-06-15 10:16:26,331 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 10:16:26,339 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 10:16:26,339 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 15:31:09,100 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 15:31:09,100 - INFO - Connexion à MinIO
+2026-06-15 15:31:09,153 - INFO - Nombre de lignes initiales : 750
+2026-06-15 15:31:09,161 - ERROR - Erreur générale : 'ingestion_time'
+2026-06-15 15:37:39,591 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 15:37:39,591 - INFO - Connexion à MinIO
+2026-06-15 15:37:39,626 - INFO - Nombre de lignes initiales : 750
+2026-06-15 15:37:39,633 - ERROR - Erreur générale : 'ingestion_time'
+2026-06-15 16:17:50,185 - INFO - Silver rows: 750
+2026-06-15 16:17:50,200 - INFO - Saved silver: ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:22:45,334 - INFO - Silver rows: 750
+2026-06-15 16:22:45,350 - INFO - Saved silver: ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:30:44,537 - INFO - Silver rows: 750
+2026-06-15 16:30:44,552 - INFO - Saved silver: ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:32:08,885 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 16:32:08,885 - INFO - Connexion à MinIO
+2026-06-15 16:32:08,934 - INFO - Nombre de lignes initiales : 750
+2026-06-15 16:32:08,948 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     333
+dtype: int64
+2026-06-15 16:32:08,948 - INFO - Skewness max_supply = 5.940666455492117
+2026-06-15 16:32:08,948 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 16:32:08,949 - INFO - Lignes supprimées : 5
+2026-06-15 16:32:08,950 - INFO - Lignes restantes : 745
+2026-06-15 16:32:08,950 - INFO - Transformation Silver terminée
+2026-06-15 16:32:08,972 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:32:09,028 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 16:32:09,028 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 16:33:00,797 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 16:33:00,797 - INFO - Connexion à MinIO
+2026-06-15 16:33:00,826 - INFO - Nombre de lignes initiales : 750
+2026-06-15 16:33:00,839 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     333
+dtype: int64
+2026-06-15 16:33:00,839 - INFO - Skewness max_supply = 5.940666455492117
+2026-06-15 16:33:00,839 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 16:33:00,841 - INFO - Lignes supprimées : 5
+2026-06-15 16:33:00,841 - INFO - Lignes restantes : 745
+2026-06-15 16:33:00,841 - INFO - Transformation Silver terminée
+2026-06-15 16:33:00,862 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:33:00,921 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 16:33:00,921 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 16:37:50,267 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 16:37:50,267 - INFO - Connexion à MinIO
+2026-06-15 16:37:50,302 - INFO - Nombre de lignes initiales : 750
+2026-06-15 16:37:50,316 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     333
+dtype: int64
+2026-06-15 16:37:50,316 - INFO - Skewness max_supply = 5.940666455492117
+2026-06-15 16:37:50,316 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 16:37:50,318 - INFO - Lignes supprimées : 5
+2026-06-15 16:37:50,318 - INFO - Lignes restantes : 745
+2026-06-15 16:37:50,318 - INFO - Transformation Silver terminée
+2026-06-15 16:37:50,341 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:37:50,393 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 16:37:50,393 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 16:43:51,041 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 16:43:51,041 - INFO - Connexion à MinIO
+2026-06-15 16:43:51,067 - INFO - Nombre de lignes initiales : 750
+2026-06-15 16:43:51,080 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     333
+dtype: int64
+2026-06-15 16:43:51,081 - INFO - Skewness max_supply = 5.940666455492117
+2026-06-15 16:43:51,081 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 16:43:51,082 - INFO - Lignes supprimées : 5
+2026-06-15 16:43:51,082 - INFO - Lignes restantes : 745
+2026-06-15 16:43:51,083 - INFO - Transformation Silver terminée
+2026-06-15 16:43:51,104 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:43:51,161 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 16:43:51,161 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 16:47:13,693 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 16:47:13,693 - INFO - Connexion à MinIO
+2026-06-15 16:47:13,728 - INFO - Nombre de lignes initiales : 750
+2026-06-15 16:47:13,741 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     333
+dtype: int64
+2026-06-15 16:47:13,741 - INFO - Skewness max_supply = 5.940666455492117
+2026-06-15 16:47:13,741 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 16:47:13,743 - INFO - Lignes supprimées : 5
+2026-06-15 16:47:13,743 - INFO - Lignes restantes : 745
+2026-06-15 16:47:13,743 - INFO - Transformation Silver terminée
+2026-06-15 16:47:13,765 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:47:13,818 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 16:47:13,818 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 16:51:49,848 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 16:51:49,848 - INFO - Connexion à MinIO
+2026-06-15 16:51:49,889 - INFO - Nombre de lignes initiales : 750
+2026-06-15 16:51:49,902 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     333
+dtype: int64
+2026-06-15 16:51:49,903 - INFO - Skewness max_supply = 5.940666455492117
+2026-06-15 16:51:49,903 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 16:51:49,904 - INFO - Lignes supprimées : 5
+2026-06-15 16:51:49,904 - INFO - Lignes restantes : 745
+2026-06-15 16:51:49,905 - INFO - Transformation Silver terminée
+2026-06-15 16:51:49,927 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:51:49,986 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 16:51:49,986 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-15 16:53:17,746 - INFO - \U0001f680 Début pipeline Silver
+2026-06-15 16:53:17,747 - INFO - Connexion à MinIO
+2026-06-15 16:53:17,785 - INFO - Nombre de lignes initiales : 750
+2026-06-15 16:53:17,801 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     333
+dtype: int64
+2026-06-15 16:53:17,801 - INFO - Skewness max_supply = 5.940666455492117
+2026-06-15 16:53:17,801 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-15 16:53:17,803 - INFO - Lignes supprimées : 5
+2026-06-15 16:53:17,803 - INFO - Lignes restantes : 745
+2026-06-15 16:53:17,804 - INFO - Transformation Silver terminée
+2026-06-15 16:53:17,827 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/15/crypto.parquet
+2026-06-15 16:53:17,883 - INFO - Fichier MinIO sauvegardé : 2026/06/15/crypto.parquet
+2026-06-15 16:53:17,883 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-16 09:25:51,137 - INFO - \U0001f680 Début pipeline Silver
+2026-06-16 09:25:51,138 - INFO - Connexion à MinIO
+2026-06-16 09:25:51,194 - INFO - Nombre de lignes initiales : 1000
+2026-06-16 09:25:51,216 - INFO - Valeurs manquantes:
+high_24h                         6
+low_24h                          6
+price_change_24h                 6
+price_change_percentage_24h      6
+max_supply                     444
+dtype: int64
+2026-06-16 09:25:51,218 - INFO - Skewness max_supply = 5.925468465808482
+2026-06-16 09:25:51,218 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-16 09:25:51,222 - INFO - Lignes supprimées : 6
+2026-06-16 09:25:51,222 - INFO - Lignes restantes : 994
+2026-06-16 09:25:51,222 - INFO - Transformation Silver terminée
+2026-06-16 09:25:51,254 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 09:25:51,265 - INFO - Fichier MinIO sauvegardé : 2026/06/16/crypto.parquet
+2026-06-16 09:25:51,265 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-16 09:39:08,466 - INFO - \U0001f680 Début pipeline Silver
+2026-06-16 09:39:08,466 - INFO - Connexion à MinIO
+2026-06-16 09:39:08,505 - INFO - Nombre de lignes initiales : 1000
+2026-06-16 09:39:08,521 - INFO - Valeurs manquantes:
+high_24h                         6
+low_24h                          6
+price_change_24h                 6
+price_change_percentage_24h      6
+max_supply                     444
+dtype: int64
+2026-06-16 09:39:08,521 - INFO - Skewness max_supply = 5.925468465808482
+2026-06-16 09:39:08,521 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-16 09:39:08,523 - INFO - Lignes supprimées : 6
+2026-06-16 09:39:08,523 - INFO - Lignes restantes : 994
+2026-06-16 09:39:08,524 - INFO - Transformation Silver terminée
+2026-06-16 09:39:08,549 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 09:39:08,560 - INFO - Fichier MinIO sauvegardé : 2026/06/16/crypto.parquet
+2026-06-16 09:39:08,561 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-16 12:55:54,794 - INFO - \U0001f680 Début pipeline Silver
+2026-06-16 12:55:54,795 - INFO - Connexion à MinIO
+2026-06-16 12:55:54,823 - INFO - Nombre de lignes initiales : 250
+2026-06-16 12:55:54,838 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     111
+dtype: int64
+2026-06-16 12:55:54,839 - INFO - Skewness max_supply = 5.944592021826859
+2026-06-16 12:55:54,839 - WARNING - Distribution très asymétrique \u2192 MEDIAN recommandée
+2026-06-16 12:55:54,841 - INFO - Lignes supprimées : 1
+2026-06-16 12:55:54,841 - INFO - Lignes restantes : 249
+2026-06-16 12:55:54,841 - INFO - Transformation Silver terminée
+2026-06-16 12:55:54,853 - INFO - Bucket crypto-silver créé
+2026-06-16 12:55:54,996 - INFO - Fichier local sauvegardé : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 12:55:55,004 - INFO - Fichier MinIO sauvegardé : 2026/06/16/crypto.parquet
+2026-06-16 12:55:55,004 - INFO - \u2705 Pipeline Silver terminé avec succès
+2026-06-16 14:15:14,961 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 14:15:14,961 - INFO - Connexion Ã  MinIO
+2026-06-16 14:15:14,970 - WARNING - Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e35ee9daf60>: Failed to establish a new connection: [Errno 111] Connection refused')': /crypto-bronze?location=
+2026-06-16 14:15:15,372 - WARNING - Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e35ee9dad50>: Failed to establish a new connection: [Errno 111] Connection refused')': /crypto-bronze?location=
+2026-06-16 14:15:16,173 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e35ee9ecaa0>: Failed to establish a new connection: [Errno 111] Connection refused')': /crypto-bronze?location=
+2026-06-16 14:15:17,778 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e35ee9ecc20>: Failed to establish a new connection: [Errno 111] Connection refused')': /crypto-bronze?location=
+2026-06-16 14:15:20,982 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e35ee9ece90>: Failed to establish a new connection: [Errno 111] Connection refused')': /crypto-bronze?location=
+2026-06-16 14:15:20,985 - ERROR - Erreur gÃ©nÃ©rale : HTTPConnectionPool(host='localhost', port=9000): Max retries exceeded with url: /crypto-bronze?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7e35ee9ec0b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2026-06-16 15:18:11,849 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:18:11,849 - INFO - Connexion Ã  MinIO
+2026-06-16 15:18:11,870 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:18:11,891 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:18:11,892 - INFO - Skewness max_supply = 5.9672314296572315
+2026-06-16 15:18:11,892 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:18:11,894 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:18:11,894 - INFO - Lignes restantes : 249
+2026-06-16 15:18:11,895 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:18:11,967 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:18:11,978 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:18:11,979 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-16 15:23:16,381 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:23:16,382 - INFO - Connexion Ã  MinIO
+2026-06-16 15:23:16,406 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:23:16,424 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:23:16,425 - INFO - Skewness max_supply = 5.9672314296572315
+2026-06-16 15:23:16,425 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:23:16,427 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:23:16,428 - INFO - Lignes restantes : 249
+2026-06-16 15:23:16,429 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:23:16,473 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:23:16,482 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:23:16,483 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-16 15:23:17,154 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:23:17,155 - INFO - Connexion Ã  MinIO
+2026-06-16 15:23:17,176 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:23:17,186 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:23:17,187 - INFO - Skewness max_supply = 5.9672314296572315
+2026-06-16 15:23:17,187 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:23:17,189 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:23:17,190 - INFO - Lignes restantes : 249
+2026-06-16 15:23:17,191 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:23:17,238 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:23:17,252 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:23:17,252 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-16 15:35:55,488 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:35:55,489 - INFO - Connexion Ã  MinIO
+2026-06-16 15:35:55,531 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:35:55,578 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:35:55,579 - INFO - Skewness max_supply = 6.087585519093959
+2026-06-16 15:35:55,579 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:35:55,581 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:35:55,581 - INFO - Lignes restantes : 249
+2026-06-16 15:35:55,582 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:35:55,619 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:35:55,628 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:35:55,629 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-16 15:35:56,220 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:35:56,220 - INFO - Connexion Ã  MinIO
+2026-06-16 15:35:56,234 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:35:56,241 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:35:56,242 - INFO - Skewness max_supply = 6.087585519093959
+2026-06-16 15:35:56,242 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:35:56,243 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:35:56,244 - INFO - Lignes restantes : 249
+2026-06-16 15:35:56,244 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:35:56,262 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:35:56,269 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:35:56,270 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-16 15:42:40,359 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:42:40,360 - INFO - Connexion Ã  MinIO
+2026-06-16 15:42:40,378 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:42:40,388 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:42:40,388 - INFO - Skewness max_supply = 6.087585519093959
+2026-06-16 15:42:40,388 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:42:40,390 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:42:40,390 - INFO - Lignes restantes : 249
+2026-06-16 15:42:40,391 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:42:40,410 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:42:40,417 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:42:40,417 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-16 15:42:40,837 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:42:40,837 - INFO - Connexion Ã  MinIO
+2026-06-16 15:42:40,854 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:42:40,864 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:42:40,865 - INFO - Skewness max_supply = 6.087585519093959
+2026-06-16 15:42:40,865 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:42:40,866 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:42:40,867 - INFO - Lignes restantes : 249
+2026-06-16 15:42:40,868 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:42:40,894 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:42:40,906 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:42:40,907 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-16 15:47:34,878 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-16 15:47:34,878 - INFO - Connexion Ã  MinIO
+2026-06-16 15:47:34,892 - INFO - Nombre de lignes initiales : 250
+2026-06-16 15:47:34,901 - INFO - Valeurs manquantes:
+high_24h                         1
+low_24h                          1
+price_change_24h                 1
+price_change_percentage_24h      1
+max_supply                     110
+dtype: int64
+2026-06-16 15:47:34,901 - INFO - Skewness max_supply = 6.087585519093959
+2026-06-16 15:47:34,901 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-16 15:47:34,903 - INFO - Lignes supprimÃ©es : 1
+2026-06-16 15:47:34,903 - INFO - Lignes restantes : 249
+2026-06-16 15:47:34,904 - INFO - Transformation Silver terminÃ©e
+2026-06-16 15:47:34,923 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/16/crypto.parquet
+2026-06-16 15:47:34,929 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/16/crypto.parquet
+2026-06-16 15:47:34,930 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-18 08:28:28,381 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-18 08:28:28,382 - INFO - Connexion Ã  MinIO
+2026-06-18 08:28:28,403 - INFO - Nombre de lignes initiales : 500
+2026-06-18 08:28:28,419 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-18 08:28:28,420 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-18 08:28:28,420 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-18 08:28:28,422 - INFO - Lignes supprimÃ©es : 3
+2026-06-18 08:28:28,423 - INFO - Lignes restantes : 497
+2026-06-18 08:28:28,423 - INFO - Transformation Silver terminÃ©e
+2026-06-18 08:28:28,472 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/18/crypto.parquet
+2026-06-18 08:28:28,481 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/18/crypto.parquet
+2026-06-18 08:28:28,481 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-18 08:31:50,985 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-18 08:31:50,985 - INFO - Connexion Ã  MinIO
+2026-06-18 08:31:50,986 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-18 08:31:50,987 - INFO - Connexion Ã  MinIO
+2026-06-18 08:31:50,988 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-18 08:31:50,988 - INFO - Connexion Ã  MinIO
+2026-06-18 08:31:50,988 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-18 08:31:50,989 - INFO - Connexion Ã  MinIO
+2026-06-18 08:31:50,991 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-18 08:31:50,991 - INFO - Connexion Ã  MinIO
+2026-06-18 08:31:51,006 - INFO - Nombre de lignes initiales : 500
+2026-06-18 08:31:51,008 - INFO - Nombre de lignes initiales : 500
+2026-06-18 08:31:51,008 - INFO - Nombre de lignes initiales : 500
+2026-06-18 08:31:51,009 - INFO - Nombre de lignes initiales : 500
+2026-06-18 08:31:51,010 - INFO - Nombre de lignes initiales : 500
+2026-06-18 08:31:51,016 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-18 08:31:51,017 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-18 08:31:51,017 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-18 08:31:51,017 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-18 08:31:51,017 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-18 08:31:51,018 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-18 08:31:51,018 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-18 08:31:51,018 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-18 08:31:51,018 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-18 08:31:51,018 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-18 08:31:51,019 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-18 08:31:51,019 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-18 08:31:51,019 - INFO - Lignes supprimÃ©es : 3
+2026-06-18 08:31:51,019 - INFO - Lignes restantes : 497
+2026-06-18 08:31:51,019 - INFO - Lignes supprimÃ©es : 3
+2026-06-18 08:31:51,020 - INFO - Lignes restantes : 497
+2026-06-18 08:31:51,020 - INFO - Lignes supprimÃ©es : 3
+2026-06-18 08:31:51,020 - INFO - Transformation Silver terminÃ©e
+2026-06-18 08:31:51,020 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-18 08:31:51,020 - INFO - Lignes restantes : 497
+2026-06-18 08:31:51,020 - INFO - Transformation Silver terminÃ©e
+2026-06-18 08:31:51,020 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-18 08:31:51,020 - INFO - Transformation Silver terminÃ©e
+2026-06-18 08:31:51,021 - INFO - Lignes supprimÃ©es : 3
+2026-06-18 08:31:51,021 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-18 08:31:51,021 - INFO - Lignes restantes : 497
+2026-06-18 08:31:51,021 - INFO - Transformation Silver terminÃ©e
+2026-06-18 08:31:51,022 - INFO - Lignes supprimÃ©es : 3
+2026-06-18 08:31:51,023 - INFO - Lignes restantes : 497
+2026-06-18 08:31:51,023 - INFO - Transformation Silver terminÃ©e
+2026-06-18 08:31:51,042 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/18/crypto.parquet
+2026-06-18 08:31:51,042 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/18/crypto.parquet
+2026-06-18 08:31:51,042 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/18/crypto.parquet
+2026-06-18 08:31:51,042 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/18/crypto.parquet
+2026-06-18 08:31:51,046 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/18/crypto.parquet
+2026-06-18 08:31:51,051 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/18/crypto.parquet
+2026-06-18 08:31:51,052 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-18 08:31:51,057 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/18/crypto.parquet
+2026-06-18 08:31:51,057 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-18 08:31:51,082 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/18/crypto.parquet
+2026-06-18 08:31:51,082 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-18 08:31:51,098 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/18/crypto.parquet
+2026-06-18 08:31:51,099 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-18 08:31:51,124 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/18/crypto.parquet
+2026-06-18 08:31:51,125 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-19 09:00:14,068 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-19 09:00:14,070 - INFO - Connexion Ã  MinIO
+2026-06-19 09:00:14,090 - INFO - Nombre de lignes initiales : 500
+2026-06-19 09:00:14,103 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-19 09:00:14,103 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-19 09:00:14,103 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-19 09:00:14,105 - INFO - Lignes supprimÃ©es : 3
+2026-06-19 09:00:14,105 - INFO - Lignes restantes : 497
+2026-06-19 09:00:14,106 - INFO - Transformation Silver terminÃ©e
+2026-06-19 09:00:14,145 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/19/crypto.parquet
+2026-06-19 09:00:14,153 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/19/crypto.parquet
+2026-06-19 09:00:14,153 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-19 09:02:21,279 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-19 09:02:21,280 - INFO - Connexion Ã  MinIO
+2026-06-19 09:02:21,299 - INFO - Nombre de lignes initiales : 500
+2026-06-19 09:02:21,309 - INFO - Valeurs manquantes:
+high_24h                         3
+low_24h                          3
+price_change_24h                 3
+price_change_percentage_24h      3
+max_supply                     220
+dtype: int64
+2026-06-19 09:02:21,309 - INFO - Skewness max_supply = 6.0546541452715985
+2026-06-19 09:02:21,310 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-19 09:02:21,312 - INFO - Lignes supprimÃ©es : 3
+2026-06-19 09:02:21,312 - INFO - Lignes restantes : 497
+2026-06-19 09:02:21,313 - INFO - Transformation Silver terminÃ©e
+2026-06-19 09:02:21,334 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/19/crypto.parquet
+2026-06-19 09:02:21,343 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/19/crypto.parquet
+2026-06-19 09:02:21,343 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s
+2026-06-19 09:28:33,822 - INFO - ðŸš€ DÃ©but pipeline Silver
+2026-06-19 09:28:33,822 - INFO - Connexion Ã  MinIO
+2026-06-19 09:28:33,852 - INFO - Nombre de lignes initiales : 750
+2026-06-19 09:28:33,871 - INFO - Valeurs manquantes:
+high_24h                         5
+low_24h                          5
+price_change_24h                 5
+price_change_percentage_24h      5
+max_supply                     331
+dtype: int64
+2026-06-19 09:28:33,871 - INFO - Skewness max_supply = 6.036055174289266
+2026-06-19 09:28:33,872 - WARNING - Distribution trÃ¨s asymÃ©trique â†’ MEDIAN recommandÃ©e
+2026-06-19 09:28:33,874 - INFO - Lignes supprimÃ©es : 5
+2026-06-19 09:28:33,874 - INFO - Lignes restantes : 745
+2026-06-19 09:28:33,875 - INFO - Transformation Silver terminÃ©e
+2026-06-19 09:28:33,920 - INFO - Fichier local sauvegardÃ© : ../data/silver/2026/06/19/crypto.parquet
+2026-06-19 09:28:33,929 - INFO - Fichier MinIO sauvegardÃ© : 2026/06/19/crypto.parquet
+2026-06-19 09:28:33,929 - INFO - âœ… Pipeline Silver terminÃ© avec succÃ¨s

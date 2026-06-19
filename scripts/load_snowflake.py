@@ -1,19 +1,8 @@
 import pandas as pd
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
-import logging
+import glob
 
-# =====================================
-# LOGGING
-# =====================================
-
-logging.basicConfig(
-    filename="snowflake_load.log",
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
-
-logger = logging.getLogger(__name__)
 
 # =====================================
 # CONFIG SNOWFLAKE
@@ -28,20 +17,62 @@ SNOWFLAKE_CONFIG = {
     "schema": "GOLD"
 }
 
+
 # =====================================
 # CONNEXION
 # =====================================
 
 def get_connection():
-
-    conn = snowflake.connector.connect(
-        user="laila",
-        password="LailaDataAnalyst2026",
-        account="pj74301.eu-west-3.aws",
-        warehouse="COMPUTE_WH"
+    return snowflake.connector.connect(
+        user=SNOWFLAKE_CONFIG["user"],
+        password=SNOWFLAKE_CONFIG["password"],
+        account=SNOWFLAKE_CONFIG["account"],
+        warehouse=SNOWFLAKE_CONFIG["warehouse"],
+        database=SNOWFLAKE_CONFIG["database"],
+        schema=SNOWFLAKE_CONFIG["schema"]
     )
 
-    return conn
+
+# =====================================
+# CHARGEMENT TABLE
+# =====================================
+
+def load_table(conn, df, table_name):
+
+    df = df.copy()
+
+    # Colonnes en majuscules
+    df.columns = df.columns.str.upper()
+
+
+    # Nettoyage DIM_DATE
+    if table_name == "DIM_DATE":
+
+        if "TIMESTAMP" in df.columns:
+            df = df.drop(columns=["TIMESTAMP"])
+
+
+        if "DATE" in df.columns:
+            df["DATE"] = pd.to_datetime(
+                df["DATE"],
+                errors="coerce"
+            ).dt.date
+
+
+    success, nchunks, nrows, _ = write_pandas(
+        conn,
+        df,
+        table_name,
+        auto_create_table=False
+    )
+
+
+    if success:
+        print(f"✅ {table_name}: {nrows} lignes")
+    else:
+        raise Exception(f"Erreur chargement {table_name}")
+
+
 
 # =====================================
 # CREATION TABLES
@@ -49,24 +80,18 @@ def get_connection():
 
 def create_tables(conn):
 
-    cursor = conn.cursor()
+    cur = conn.cursor()
 
     try:
 
-        cursor.execute("CREATE DATABASE IF NOT EXISTS CRYPTO_DB")
-        cursor.execute("USE DATABASE CRYPTO_DB")
+        cur.execute("USE DATABASE CRYPTO_DB")
+        cur.execute("USE SCHEMA GOLD")
 
-        cursor.execute("CREATE SCHEMA IF NOT EXISTS GOLD")
-        cursor.execute("USE SCHEMA GOLD")
 
-        # Supprimer les tables existantes
-        cursor.execute("DROP TABLE IF EXISTS FACT_CRYPTO_SNAPSHOT")
-        cursor.execute("DROP TABLE IF EXISTS DIM_DATE")
-        cursor.execute("DROP TABLE IF EXISTS DIM_CRYPTO")
+        # Création des tables
 
-        # DIM_CRYPTO
-        cursor.execute("""
-        CREATE TABLE DIM_CRYPTO (
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS DIM_CRYPTO(
             CRYPTO_KEY INTEGER,
             ID STRING,
             SYMBOL STRING,
@@ -74,9 +99,9 @@ def create_tables(conn):
         )
         """)
 
-        # DIM_DATE
-        cursor.execute("""
-        CREATE TABLE DIM_DATE (
+
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS DIM_DATE(
             DATE_KEY INTEGER,
             DATE DATE,
             YEAR INTEGER,
@@ -89,9 +114,9 @@ def create_tables(conn):
         )
         """)
 
-        # FACT
-        cursor.execute("""
-        CREATE TABLE FACT_CRYPTO_SNAPSHOT (
+
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS FACT_CRYPTO_SNAPSHOT(
             CRYPTO_KEY INTEGER,
             DATE_KEY INTEGER,
             CURRENT_PRICE FLOAT,
@@ -108,95 +133,30 @@ def create_tables(conn):
         )
         """)
 
+
         conn.commit()
 
-        print("✅ Tables créées avec succès")
+        print("✅ Tables créées")
+
+
+        # =====================================
+        # NETTOYAGE AVANT RECHARGEMENT
+        # =====================================
+
+        cur.execute("TRUNCATE TABLE DIM_CRYPTO")
+
+        cur.execute("TRUNCATE TABLE DIM_DATE")
+
+        cur.execute("TRUNCATE TABLE FACT_CRYPTO_SNAPSHOT")
+
+
+        print("🧹 Tables vidées avant chargement")
+
 
     finally:
-        cursor.close()
-# =====================================
-# LOAD TABLE
-# =====================================
+        cur.close()
 
-def load_table(conn, df, table_name):
 
-    # Colonnes Snowflake en MAJUSCULES
-    df.columns = [col.upper() for col in df.columns]
-
-    # Correction DIM_DATE
-    if table_name == "DIM_DATE":
-        df["DATE"] = pd.to_datetime(df["DATE"]).dt.date
-
-    success, nchunks, nrows, _ = write_pandas(
-        conn,
-        df,
-        table_name
-    )
-
-    if success:
-        print(f"✅ {table_name}: {nrows} lignes chargées")
-    else:
-        raise Exception(f"Erreur chargement {table_name}")
-
-# =====================================
-# VALIDATION
-# =====================================
-
-def validate_tables(conn):
-
-    cursor = conn.cursor()
-
-    try:
-
-        tables = [
-            "DIM_CRYPTO",
-            "DIM_DATE",
-            "FACT_CRYPTO_SNAPSHOT"
-        ]
-
-        for table in tables:
-
-            cursor.execute(
-                f"SELECT COUNT(*) FROM {table}"
-            )
-
-            count = cursor.fetchone()[0]
-
-            print(f"{table}: {count} lignes")
-
-            logger.info(
-                f"{table}: {count} lignes"
-            )
-
-        cursor.execute("""
-        SELECT COUNT(*)
-        FROM FACT_CRYPTO_SNAPSHOT f
-        LEFT JOIN DIM_CRYPTO d
-        ON f.CRYPTO_KEY = d.CRYPTO_KEY
-        WHERE d.CRYPTO_KEY IS NULL
-        """)
-
-        missing_crypto = cursor.fetchone()[0]
-
-        cursor.execute("""
-        SELECT COUNT(*)
-        FROM FACT_CRYPTO_SNAPSHOT f
-        LEFT JOIN DIM_DATE d
-        ON f.DATE_KEY = d.DATE_KEY
-        WHERE d.DATE_KEY IS NULL
-        """)
-
-        missing_date = cursor.fetchone()[0]
-
-        print(
-            f"FK crypto manquantes : {missing_crypto}"
-        )
-        print(
-            f"FK date manquantes : {missing_date}"
-        )
-
-    finally:
-        cursor.close()
 
 # =====================================
 # PIPELINE SNOWFLAKE
@@ -204,73 +164,137 @@ def validate_tables(conn):
 
 def snowflake_pipeline():
 
-    logger.info("Début pipeline Snowflake")
+    print("🚀 START SNOWFLAKE LOAD")
 
-    dim_crypto = pd.read_parquet(
-        "../data/gold/2026/06/12/dim_crypto.parquet"
-    )
 
-    dim_date = pd.read_parquet(
-        "../data/gold/2026/06/12/dim_date.parquet"
-    )
+    dim_crypto_file = sorted(
+        glob.glob("../data/gold/*/*/*/dim_crypto.parquet")
+    )[-1]
 
-    fact = pd.read_parquet(
-        "../data/gold/2026/06/12/fact_crypto_snapshot.parquet"
-    )
+
+    dim_date_file = sorted(
+        glob.glob("../data/gold/*/*/*/dim_date.parquet")
+    )[-1]
+
+
+    fact_file = sorted(
+        glob.glob("../data/gold/*/*/*/fact_crypto_snapshot.parquet")
+    )[-1]
+
+
+    # Lecture parquet
+
+    dim_crypto = pd.read_parquet(dim_crypto_file)
+
+    dim_date = pd.read_parquet(dim_date_file)
+
+    fact = pd.read_parquet(fact_file)
+
+
+
+    if "timestamp" in dim_date.columns:
+        dim_date = dim_date.drop(columns=["timestamp"])
+
+
+
+    print("\nDATES DANS GOLD")
+    print(sorted(dim_date["date"].unique()))
+
+
+    print("\nSHAPES")
+
+    print("DIM_CRYPTO :", dim_crypto.shape)
+
+    print("DIM_DATE   :", dim_date.shape)
+
+    print("FACT       :", fact.shape)
+
+
 
     conn = get_connection()
 
+
     try:
+
 
         create_tables(conn)
 
-        load_table(
-            conn,
-            dim_crypto,
-            "DIM_CRYPTO"
+
+        load_table(conn, dim_crypto, "DIM_CRYPTO")
+
+        load_table(conn, dim_date, "DIM_DATE")
+
+        load_table(conn, fact, "FACT_CRYPTO_SNAPSHOT")
+
+
+
+        cur = conn.cursor()
+
+
+
+        print("\n📊 VALIDATION")
+
+
+        cur.execute(
+            "SELECT COUNT(*) FROM DIM_CRYPTO"
+        )
+        print(
+            "DIM_CRYPTO :",
+            cur.fetchone()[0]
         )
 
-        load_table(
-            conn,
-            dim_date,
-            "DIM_DATE"
+
+        cur.execute(
+            "SELECT COUNT(*) FROM DIM_DATE"
+        )
+        print(
+            "DIM_DATE :",
+            cur.fetchone()[0]
         )
 
-        load_table(
-            conn,
-            fact,
-            "FACT_CRYPTO_SNAPSHOT"
+
+        cur.execute(
+            "SELECT COUNT(*) FROM FACT_CRYPTO_SNAPSHOT"
+        )
+        print(
+            "FACT :",
+            cur.fetchone()[0]
         )
 
-        validate_tables(conn)
 
-        logger.info(
-            "Pipeline Snowflake terminé"
-        )
+
+        cur.execute("""
+        SELECT DISTINCT DATE
+        FROM DIM_DATE
+        ORDER BY DATE
+        """)
+
+
+        print("\n📅 DATES DANS SNOWFLAKE")
+
+
+        for row in cur.fetchall():
+            print(row[0])
+
+
+
+        cur.close()
+
+
+        print("\n✅ LOAD TERMINÉ")
+
+
 
     finally:
+
         conn.close()
-        print("\n=== DIM_CRYPTO ===")
-    print(dim_crypto.head())
 
-    print("\n=== DIM_DATE ===")
-    print(dim_date.head())
-    print(dim_date.dtypes)
 
-    print("\n=== FACT ===")
-    print(fact.head())
-    # =====================================
-# EXECUTION
+
+# =====================================
+# RUN
 # =====================================
 
 if __name__ == "__main__":
 
-    print(
-        "🚀 Chargement Snowflake"
-    )
-
     snowflake_pipeline()
-
-    print(
-        "✅ Fin du chargement"
-    )

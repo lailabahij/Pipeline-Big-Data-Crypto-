@@ -1,0 +1,115 @@
+version: "3.8"
+
+services:
+
+  # ==========================
+  # MINIO
+  # ==========================
+  minio:
+    image: minio/minio
+    container_name: minio
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+
+    volumes:
+      - minio_data:/data
+
+    command: server /data --console-address ":9001"
+
+    restart: unless-stopped
+
+
+  # ==========================
+  # POSTGRES AIRFLOW
+  # ==========================
+  airflow_postgres:
+    image: postgres:16
+    container_name: airflow_postgres
+
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    restart: unless-stopped
+
+
+  # ==========================
+  # AIRFLOW WEBSERVER
+  # ==========================
+  airflow_webserver:
+    image: apache/airflow:2.10.5
+    container_name: airflow_webserver
+
+    depends_on:
+      - airflow_postgres
+      - minio
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow_postgres/airflow
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+
+      # Installation packages Python
+      _PIP_ADDITIONAL_REQUIREMENTS: "-r /opt/airflow/requirements.txt"
+
+    volumes:
+      - ../dags:/opt/airflow/dags
+      - ../scripts:/opt/airflow/scripts
+      - ../requirements.txt:/opt/airflow/requirements.txt
+
+    command: webserver
+
+    restart: unless-stopped
+
+
+  # ==========================
+  # AIRFLOW SCHEDULER
+  # ==========================
+  airflow_scheduler:
+    image: apache/airflow:2.10.5
+    container_name: airflow_scheduler
+
+    depends_on:
+      - airflow_postgres
+      - minio
+
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow_postgres/airflow
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+
+      # Installation packages Python
+      _PIP_ADDITIONAL_REQUIREMENTS: "-r /opt/airflow/requirements.txt"
+
+    volumes:
+      - ../dags:/opt/airflow/dags
+      - ../scripts:/opt/airflow/scripts
+      - ../requirements.txt:/opt/airflow/requirements.txt
+
+    command: scheduler
+
+    restart: unless-stopped
+
+
+
+# ==========================
+# VOLUMES
+# ==========================
+volumes:
+
+  minio_data:
+
+  postgres_data:

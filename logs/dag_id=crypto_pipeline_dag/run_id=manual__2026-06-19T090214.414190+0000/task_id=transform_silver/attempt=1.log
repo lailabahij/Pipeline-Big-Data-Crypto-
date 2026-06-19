@@ -1,0 +1,55 @@
+[2026-06-19T09:02:20.238+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-19T09:02:20.253+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: crypto_pipeline_dag.transform_silver manual__2026-06-19T09:02:14.414190+00:00 [queued]>
+[2026-06-19T09:02:20.259+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: crypto_pipeline_dag.transform_silver manual__2026-06-19T09:02:14.414190+00:00 [queued]>
+[2026-06-19T09:02:20.261+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2026-06-19T09:02:20.268+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): transform_silver> on 2026-06-19 09:02:14.414190+00:00
+[2026-06-19T09:02:20.274+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'crypto_pipeline_dag', 'transform_silver', 'manual__2026-06-19T09:02:14.414190+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/crypto_pipeline_dag.py', '--cfg-path', '/tmp/tmp9kfk2i_2']
+[2026-06-19T09:02:20.276+0000] {standard_task_runner.py:105} INFO - Job 151: Subtask transform_silver
+[2026-06-19T09:02:20.277+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=304) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-19T09:02:20.277+0000] {standard_task_runner.py:72} INFO - Started process 305 to run task
+[2026-06-19T09:02:20.310+0000] {task_command.py:467} INFO - Running <TaskInstance: crypto_pipeline_dag.transform_silver manual__2026-06-19T09:02:14.414190+00:00 [running]> on host 7e9583a5360c
+[2026-06-19T09:02:20.365+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Laila' AIRFLOW_CTX_DAG_ID='crypto_pipeline_dag' AIRFLOW_CTX_TASK_ID='transform_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-06-19T09:02:14.414190+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-19T09:02:14.414190+00:00'
+[2026-06-19T09:02:20.365+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-06-19T09:02:20.375+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-06-19T09:02:20.376+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/scripts &&\n        python transform_silver.py\n        ']
+[2026-06-19T09:02:20.382+0000] {subprocess.py:99} INFO - Output:
+[2026-06-19T09:02:21.344+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:02:21.344+0000] {subprocess.py:106} INFO - 📂 Fichiers Bronze trouvés :
+[2026-06-19T09:02:21.345+0000] {subprocess.py:106} INFO - 2026/06/16/raw.json
+[2026-06-19T09:02:21.345+0000] {subprocess.py:106} INFO - 2026/06/18/raw.json
+[2026-06-19T09:02:21.345+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:02:21.346+0000] {subprocess.py:106} INFO - 📊 Total lignes récupérées : 500
+[2026-06-19T09:02:21.346+0000] {subprocess.py:106} INFO - 2026-06-04 17:58:24.894000+00:00
+[2026-06-19T09:02:21.346+0000] {subprocess.py:106} INFO - 2026-06-18 08:27:48.935000+00:00
+[2026-06-19T09:02:21.346+0000] {subprocess.py:106} INFO - 494
+[2026-06-19T09:02:21.346+0000] {subprocess.py:106} INFO - Dates uniques : 2
+[2026-06-19T09:02:21.347+0000] {subprocess.py:106} INFO - Heures uniques : 2
+[2026-06-19T09:02:21.347+0000] {subprocess.py:106} INFO - Minutes uniques : 12
+[2026-06-19T09:02:21.347+0000] {subprocess.py:106} INFO - Dates : [datetime.date(2026, 6, 16), datetime.date(2026, 6, 18)]
+[2026-06-19T09:02:21.347+0000] {subprocess.py:106} INFO - Heures : [8, 15]
+[2026-06-19T09:02:21.347+0000] {subprocess.py:106} INFO - Minutes : [0, 5, 10, 15, 20, 25, 27, 30, 35, 40, 45, 46]
+[2026-06-19T09:02:21.347+0000] {subprocess.py:106} INFO -            date  hour  minute
+[2026-06-19T09:02:21.348+0000] {subprocess.py:106} INFO - 320  2026-06-18     8       0
+[2026-06-19T09:02:21.348+0000] {subprocess.py:106} INFO - 344  2026-06-18     8       5
+[2026-06-19T09:02:21.348+0000] {subprocess.py:106} INFO - 355  2026-06-18     8      10
+[2026-06-19T09:02:21.348+0000] {subprocess.py:106} INFO - 325  2026-06-18     8      15
+[2026-06-19T09:02:21.348+0000] {subprocess.py:106} INFO - 462  2026-06-18     8      20
+[2026-06-19T09:02:21.348+0000] {subprocess.py:106} INFO - 289  2026-06-18     8      25
+[2026-06-19T09:02:21.349+0000] {subprocess.py:106} INFO - 250  2026-06-18     8      27
+[2026-06-19T09:02:21.349+0000] {subprocess.py:106} INFO - 104  2026-06-16    15      30
+[2026-06-19T09:02:21.349+0000] {subprocess.py:106} INFO - 222  2026-06-16    15      35
+[2026-06-19T09:02:21.350+0000] {subprocess.py:106} INFO - 69   2026-06-16    15      40
+[2026-06-19T09:02:21.350+0000] {subprocess.py:106} INFO - 40   2026-06-16    15      45
+[2026-06-19T09:02:21.350+0000] {subprocess.py:106} INFO - 0    2026-06-16    15      46
+[2026-06-19T09:02:21.351+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:02:21.351+0000] {subprocess.py:106} INFO - DATES SILVER
+[2026-06-19T09:02:21.351+0000] {subprocess.py:106} INFO - [datetime.date(2026, 6, 16), datetime.date(2026, 6, 18)]
+[2026-06-19T09:02:21.351+0000] {subprocess.py:106} INFO - 
+[2026-06-19T09:02:21.351+0000] {subprocess.py:106} INFO - NB DATES UNIQUES
+[2026-06-19T09:02:21.352+0000] {subprocess.py:106} INFO - 2
+[2026-06-19T09:02:21.397+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-06-19T09:02:21.417+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-06-19T09:02:21.418+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=crypto_pipeline_dag, task_id=transform_silver, run_id=manual__2026-06-19T09:02:14.414190+00:00, execution_date=20260619T090214, start_date=20260619T090220, end_date=20260619T090221
+[2026-06-19T09:02:21.458+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-06-19T09:02:21.483+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-19T09:02:21.485+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

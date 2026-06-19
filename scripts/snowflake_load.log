@@ -16,3 +16,168 @@
 2026-06-12 16:48:04,108 - INFO - DIM_DATE: 6 lignes
 2026-06-12 16:48:04,232 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
 2026-06-12 16:48:04,644 - INFO - Pipeline Snowflake terminé
+2026-06-15 09:43:35,017 - INFO - Début pipeline Snowflake
+2026-06-15 09:43:35,348 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 09:43:35,348 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 09:45:47,278 - INFO - Début pipeline Snowflake
+2026-06-15 09:45:47,307 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 09:45:47,307 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 09:45:56,156 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 09:45:56,267 - INFO - DIM_DATE: 6 lignes
+2026-06-15 09:45:56,412 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 09:45:57,017 - INFO - Pipeline Snowflake terminé
+2026-06-15 09:52:58,882 - INFO - Début pipeline Snowflake
+2026-06-15 09:52:58,910 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 09:52:58,910 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 09:53:06,941 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 09:53:07,105 - INFO - DIM_DATE: 6 lignes
+2026-06-15 09:53:07,304 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 09:53:07,745 - INFO - Pipeline Snowflake terminé
+2026-06-15 10:08:49,915 - INFO - Début pipeline Snowflake
+2026-06-15 10:08:49,943 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 10:08:49,943 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 10:08:59,239 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 10:08:59,410 - INFO - DIM_DATE: 6 lignes
+2026-06-15 10:08:59,579 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 10:09:00,033 - INFO - Pipeline Snowflake terminé
+2026-06-15 10:16:34,144 - INFO - Début pipeline Snowflake
+2026-06-15 10:16:34,175 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 10:16:34,175 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 10:16:43,405 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 10:16:43,581 - INFO - DIM_DATE: 6 lignes
+2026-06-15 10:16:43,720 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 10:16:44,318 - INFO - Pipeline Snowflake terminé
+2026-06-15 10:18:29,693 - INFO - Début pipeline Snowflake
+2026-06-15 10:18:29,722 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 10:18:29,722 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 10:18:39,121 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 10:18:39,335 - INFO - DIM_DATE: 6 lignes
+2026-06-15 10:18:39,466 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 10:18:39,952 - INFO - Pipeline Snowflake terminé
+2026-06-15 10:23:56,055 - INFO - Début pipeline Snowflake
+2026-06-15 10:23:56,086 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 10:23:56,086 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 10:24:04,928 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 10:24:05,109 - INFO - DIM_DATE: 6 lignes
+2026-06-15 10:24:05,262 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 10:24:05,761 - INFO - Pipeline Snowflake terminé
+2026-06-15 10:27:25,848 - INFO - Début pipeline Snowflake
+2026-06-15 10:27:25,877 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 10:27:25,878 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 10:27:34,874 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 10:27:35,033 - INFO - DIM_DATE: 6 lignes
+2026-06-15 10:27:35,201 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 10:27:35,731 - INFO - Pipeline Snowflake terminé
+2026-06-15 10:27:48,647 - INFO - Début pipeline Snowflake
+2026-06-15 10:27:48,674 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 10:27:48,674 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 10:27:57,004 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 10:27:57,123 - INFO - DIM_DATE: 6 lignes
+2026-06-15 10:27:57,319 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 10:27:57,718 - INFO - Pipeline Snowflake terminé
+2026-06-15 12:38:04,046 - INFO - Début pipeline Snowflake
+2026-06-15 12:38:04,072 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 12:38:04,072 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 12:38:13,602 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 12:38:13,732 - INFO - DIM_DATE: 6 lignes
+2026-06-15 12:38:14,198 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 12:38:14,636 - INFO - Pipeline Snowflake terminé
+2026-06-15 12:40:30,440 - INFO - Début pipeline Snowflake
+2026-06-15 12:40:30,467 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 12:40:30,467 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 12:40:38,921 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 12:40:39,092 - INFO - DIM_DATE: 6 lignes
+2026-06-15 12:40:39,215 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 12:40:39,640 - INFO - Pipeline Snowflake terminé
+2026-06-15 12:44:42,316 - INFO - Début pipeline Snowflake
+2026-06-15 12:47:07,909 - INFO - Début pipeline Snowflake
+2026-06-15 12:50:05,432 - INFO - Début pipeline Snowflake
+2026-06-15 12:52:05,334 - INFO - Début pipeline Snowflake
+2026-06-15 12:52:05,365 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 12:52:05,365 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 12:52:27,870 - INFO - Début pipeline Snowflake
+2026-06-15 12:52:27,897 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 12:52:27,897 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 12:52:37,837 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 12:52:38,022 - INFO - DIM_DATE: 6 lignes
+2026-06-15 12:52:38,183 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 12:52:38,758 - INFO - Pipeline Snowflake terminé
+2026-06-15 14:45:29,181 - INFO - Début pipeline Snowflake
+2026-06-15 14:45:29,210 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 14:45:29,210 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 14:59:40,305 - INFO - Début pipeline Snowflake
+2026-06-15 14:59:40,332 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 14:59:40,333 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 14:59:49,221 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 14:59:49,350 - INFO - DIM_DATE: 6 lignes
+2026-06-15 14:59:49,482 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 14:59:50,945 - INFO - Pipeline Snowflake terminé
+2026-06-15 15:31:23,901 - INFO - Début pipeline Snowflake
+2026-06-15 15:31:23,931 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 15:31:23,931 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 15:31:33,576 - INFO - DIM_CRYPTO: 249 lignes
+2026-06-15 15:31:33,698 - INFO - DIM_DATE: 6 lignes
+2026-06-15 15:31:33,916 - INFO - FACT_CRYPTO_SNAPSHOT: 249 lignes
+2026-06-15 15:31:34,446 - INFO - Pipeline Snowflake terminé
+2026-06-15 15:40:59,614 - INFO - START Snowflake pipeline
+2026-06-15 15:40:59,653 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 15:40:59,653 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 15:42:01,068 - INFO - START Snowflake pipeline
+2026-06-15 15:42:01,106 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 15:42:01,106 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 15:42:54,256 - INFO - START Snowflake pipeline
+2026-06-15 15:42:54,301 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 15:42:54,301 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 15:43:03,341 - INFO - DONE Snowflake pipeline
+2026-06-15 15:48:50,803 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 15:48:50,803 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 15:57:51,017 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 15:57:51,017 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:05:46,466 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:05:46,466 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:20:08,106 - INFO - START Snowflake pipeline
+2026-06-15 16:20:08,158 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:20:08,158 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:20:16,973 - INFO - Snowflake pipeline DONE
+2026-06-15 16:23:18,991 - INFO - START Snowflake pipeline
+2026-06-15 16:23:19,032 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:23:19,033 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:23:28,051 - INFO - Snowflake pipeline DONE
+2026-06-15 16:33:27,582 - INFO - START Snowflake pipeline
+2026-06-15 16:33:27,636 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:33:27,636 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:33:38,291 - INFO - Snowflake pipeline DONE
+2026-06-15 16:40:09,234 - INFO - START Snowflake pipeline
+2026-06-15 16:40:09,278 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:40:09,278 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:40:19,154 - INFO - Snowflake pipeline DONE
+2026-06-15 16:41:43,149 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:41:43,150 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:43:14,131 - INFO - START Snowflake pipeline
+2026-06-15 16:43:14,172 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:43:14,173 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:43:23,106 - INFO - DONE Snowflake pipeline
+2026-06-15 16:43:59,279 - INFO - START Snowflake pipeline
+2026-06-15 16:43:59,327 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:43:59,327 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:44:08,514 - INFO - DONE Snowflake pipeline
+2026-06-15 16:44:18,587 - INFO - START Snowflake pipeline
+2026-06-15 16:44:18,632 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:44:18,633 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:44:28,328 - INFO - DONE Snowflake pipeline
+2026-06-15 16:44:32,249 - INFO - START Snowflake pipeline
+2026-06-15 16:44:32,295 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:44:32,295 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:44:41,168 - INFO - DONE Snowflake pipeline
+2026-06-15 16:47:21,357 - INFO - START Snowflake pipeline
+2026-06-15 16:47:21,398 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:47:21,398 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:47:30,425 - INFO - DONE Snowflake pipeline
+2026-06-15 16:51:58,360 - INFO - START Snowflake pipeline
+2026-06-15 16:51:58,407 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:51:58,407 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-15 16:52:07,246 - INFO - DONE Snowflake pipeline
+2026-06-15 16:53:27,053 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-15 16:53:27,053 - INFO - Connecting to GLOBAL Snowflake domain
+2026-06-16 09:26:06,201 - INFO - Snowflake Connector for Python Version: 4.6.0, Python Version: 3.14.2, Platform: Windows-11-10.0.26200-SP0
+2026-06-16 09:26:06,201 - INFO - Connecting to GLOBAL Snowflake domain
