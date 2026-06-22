@@ -416,5 +416,14 @@ Le projet met en œuvre une chaîne de traitement Data Engineering complète :
 * Analyse Tableau
 
 Cette solution permet une analyse efficace et centralisée des performances du marché des cryptomonnaies.
+---
+# 📸 Captures d’Écran
+
+## 🖥️ Dashboard Global
+
+<img width="1366" height="768" alt="Dashboard principal" src="https://github.com/user-attachments/assets/dbf60da3-370f-4da9-b906-482563bf60da" />
+## 🖥️ Dashboard détail
+
+<img width="986" height="789" alt="dashboard détail" src="https://github.com/user-attachments/assets/110961ff-7558-4771-8399-249cd96a367f" />
 
 
